@@ -8,7 +8,7 @@ const person: Person = {
   role: "Mobile App Developer",
   avatar: "/images/avatar.jpg", // Replace with your actual avatar image
   email: "mernahesham2003@gmail.com",
-  location: "Kafr El-Sheikh, Egypt",
+  location: "Africa/Cairo",
   languages: ["Arabic", "English"],
 };
 
