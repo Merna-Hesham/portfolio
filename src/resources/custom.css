@@ -1,55 +1,56 @@
  :root {
-/*
-  /* Example setup for custom colors */
-/* Generate at: https://once-ui.com/customize */
-/*
-  --scheme-brand-100: #1a010d;
-  --scheme-brand-200: #33011a;
-  --scheme-brand-300: #660333;
-  --scheme-brand-400: #99054d;
-  --scheme-brand-500: #cc0666;
-  --scheme-brand-600: #ff0a54; /* Primary Brand Color */
-  --scheme-brand-700: #ff5c8a;
-  --scheme-brand-800: #ff85a1;
-  --scheme-brand-900: #fbb1bd;
-  --scheme-brand-1000: #f7cad0;
-  --scheme-brand-1100: #fae0e4;
-  --scheme-brand-1200: #fff0f2;
-  --scheme-brand-600-10: rgba(255, 10, 84, 0.1);
-  --scheme-brand-600-30: rgba(255, 10, 84, 0.3);
-  --scheme-brand-600-50: rgba(255, 10, 84, 0.5);
+   /* Custom Brand Colors - Pink Palette */
+   /* Generated from user's brand color scheme */
 
-  --scheme-accent-100: #1a010d;
-  --scheme-accent-200: #33011a;
-  --scheme-accent-300: #660333;
-  --scheme-accent-400: #99054d;
-  --scheme-accent-500: #cc0666;
-  --scheme-accent-600: #ff0a54;
-  --scheme-accent-700: #ff5c8a;
-  --scheme-accent-800: #ff85a1;
-  --scheme-accent-900: #fbb1bd;
-  --scheme-accent-1000: #f7cad0;
-  --scheme-accent-1100: #fae0e4;
-  --scheme-accent-1200: #fff0f2;
-  --scheme-accent-600-10: rgba(255, 10, 84, 0.1);
-  --scheme-accent-600-30: rgba(255, 10, 84, 0.3);
-  --scheme-accent-600-50: rgba(255, 10, 84, 0.5);
+   /* Brand Color Scale (Pink) */
+   --scheme-brand-100: #1a010d;
+   --scheme-brand-200: #33011a;
+   --scheme-brand-300: #660333;
+   --scheme-brand-400: #99054d;
+   --scheme-brand-500: #cc0666;
+   --scheme-brand-600: #ff0a54;
+   /* Primary Brand Color */
+   --scheme-brand-700: #ff477e;
+   --scheme-brand-800: #ff5c8a;
+   --scheme-brand-900: #ff7096;
+   --scheme-brand-1000: #ff85a1;
+   --scheme-brand-1100: #ff99ac;
+   --scheme-brand-1200: #fbb1bd;
+   --scheme-brand-600-10: rgba(255, 10, 84, 0.1);
+   --scheme-brand-600-30: rgba(255, 10, 84, 0.3);
+   --scheme-brand-600-50: rgba(255, 10, 84, 0.5);
 
-  /*
-  --scheme-neutral-100:  #020b10;
-  --scheme-neutral-200:  #0b181d;
-  --scheme-neutral-300:  #344248;
-  --scheme-neutral-400:  #4f5d64;
-  --scheme-neutral-500:  #68777e;
-  --scheme-neutral-600:  #89989f;
-  --scheme-neutral-700:  #a7b7be;
-  --scheme-neutral-800:  #c7d7df;
-  --scheme-neutral-900:  #d4e4ec;
-  --scheme-neutral-1000: #e1f2f9;
-  --scheme-neutral-1100: #e7f8ff;
-  --scheme-neutral-1200: #eeffff;
-  --scheme-neutral-600-10: rgba(137,152,159,0.1);
-  --scheme-neutral-600-30: rgba(137,152,159,0.3);
-  --scheme-neutral-600-50: rgba(137,152,159,0.5);
-  */
-}
+   /* Accent Color Scale (Lighter Pink) */
+   --scheme-accent-100: #2d0515;
+   --scheme-accent-200: #5a0a2a;
+   --scheme-accent-300: #870f3f;
+   --scheme-accent-400: #b41454;
+   --scheme-accent-500: #e11969;
+   --scheme-accent-600: #ff477e;
+   --scheme-accent-700: #ff5c8a;
+   --scheme-accent-800: #ff7096;
+   --scheme-accent-900: #ff85a1;
+   --scheme-accent-1000: #ff99ac;
+   --scheme-accent-1100: #fbb1bd;
+   --scheme-accent-1200: #f9bec7;
+   --scheme-accent-600-10: rgba(255, 71, 126, 0.1);
+   --scheme-accent-600-30: rgba(255, 71, 126, 0.3);
+   --scheme-accent-600-50: rgba(255, 71, 126, 0.5);
+
+   /* Neutral Color Scale (Subtle Pink Tones) */
+   --scheme-neutral-100: #0d0509;
+   --scheme-neutral-200: #1a0a12;
+   --scheme-neutral-300: #2d1822;
+   --scheme-neutral-400: #402632;
+   --scheme-neutral-500: #533442;
+   --scheme-neutral-600: #665265;
+   --scheme-neutral-700: #997088;
+   --scheme-neutral-800: #cc8eab;
+   --scheme-neutral-900: #d9a8bf;
+   --scheme-neutral-1000: #e6c2d3;
+   --scheme-neutral-1100: #f2dce7;
+   --scheme-neutral-1200: #faf0f5;
+   --scheme-neutral-600-10: rgba(102, 82, 101, 0.1);
+   --scheme-neutral-600-30: rgba(102, 82, 101, 0.3);
+   --scheme-neutral-600-50: rgba(102, 82, 101, 0.5);
+ }
