@@ -1,4 +1,4 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
+import { About, Blog, Home, Newsletter, Person, Social, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
@@ -6,7 +6,7 @@ const person: Person = {
   lastName: "Hesham",
   name: "Merna Hesham",
   role: "Mobile App Developer",
-  avatar: "/images/avatar.jpg", // Replace with your actual avatar image
+  avatar: "/images/merna_avatar.jpg", // Replace with your actual avatar image
   email: "mernahesham2003@gmail.com",
   location: "Africa/Cairo",
   languages: ["Arabic", "English"],
@@ -54,7 +54,7 @@ const home: Home = {
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>AI-driven Mobile Developer &<br />UI/UX Specialist</>,
+  headline: <>Merna Hesham</>,
   featured: {
     display: true,
     title: (
@@ -70,7 +70,7 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm Merna, a Co-founder & COO at <Text as="span" size="xl" weight="strong">Goia</Text>, <br /> specializing in mobile apps, AI, and computer vision.
+      Flutter & Android Native Mobile App Developer
     </>
   ),
 };
@@ -235,26 +235,5 @@ const work: Work = {
   // All projects will be listed on the /home and /work routes
 };
 
-const gallery: Gallery = {
-  path: "/gallery",
-  label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
-  images: [
-    {
-      src: "/images/gallery/horizontal-1.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/vertical-1.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-  ],
-};
-
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, blog, work };
 
