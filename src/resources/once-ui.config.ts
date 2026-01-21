@@ -16,10 +16,11 @@ import { home } from "./index";
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
 const baseURL: string = "https://merna-hesham.vercel.app";
 
-"/": true,
+const routes: RoutesConfig = {
+  "/": true,
   "/about": true,
-    "/work": true,
-      "/blog": false,
+  "/work": true,
+  "/blog": false,
 };
 
 const display: DisplayConfig = {
