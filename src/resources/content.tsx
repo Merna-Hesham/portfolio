@@ -25,13 +25,13 @@ const social: Social = [
   {
     name: "GitHub",
     icon: "github",
-    link: "https://github.com/", // Update with your GitHub URL
+    link: "https://github.com/Merna-Hesham",
     essential: true,
   },
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://linkedin.com/", // Update with your LinkedIn URL
+    link: "https://www.linkedin.com/in/merna-hesham-8a94b92b5/",
     essential: true,
   },
   {
@@ -44,6 +44,12 @@ const social: Social = [
     name: "Linktree",
     icon: "link", // ensuring generic link icon is used if linktree not available
     link: "https://linktr.ee/mernahesham",
+    essential: true,
+  },
+  {
+    name: "Resume",
+    icon: "document",
+    link: "https://drive.google.com/file/d/1cne4m_cSK4LbYc3s0ArECeqzzsgnDUUg/view",
     essential: true,
   },
 ];
