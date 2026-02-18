@@ -1,5 +1,6 @@
 import { IconName } from "@/resources/icons";
 import { zones } from "tzdata";
+import React from "react";
 
 /**
  * IANA time zone string (e.g., 'Asia/Calcutta', 'Europe/Vienna').
@@ -82,14 +83,54 @@ export interface BasePageConfig {
   image?: `/images/${string}` | string;
 }
 
+
+/**
+ * Service configuration.
+ */
+export type Service = {
+  /** Title of the service */
+  title: string;
+  /** Description of the service */
+  description: string;
+  /** Icon for the service (optional) */
+  icon?: string;
+};
+
+/**
+ * Testimonial configuration.
+ */
+export type Testimonial = {
+  /** Name of the person providing the testimonial */
+  name: string;
+  /** Role/Title of the person */
+  role: string;
+  /** The testimonial text */
+  text: string;
+  /** Avatar image of the person (optional) */
+  avatar?: string;
+};
+
+/**
+ * Achievement configuration.
+ */
+export type Achievement = {
+  /** Title of the achievement/certification */
+  title: string;
+  /** Organization or Issuer */
+  organization: string;
+  /** Date of achievement */
+  date: string;
+  /** Description (optional) */
+  description?: string;
+  /** Link to credential (optional) */
+  link?: string;
+};
+
 /**
  * Home page configuration.
  */
 export interface Home extends BasePageConfig {
-  /** The image to be displayed in metadata
-   *
-   * The image needs to be put inside `/public/images/` directory
-   */
+  /** The image to be displayed in metadata */
   image: `/images/${string}` | string;
   /** The headline of the home page */
   headline: React.ReactNode;
@@ -101,110 +142,120 @@ export interface Home extends BasePageConfig {
   };
   /** The sub text which appears below the headline */
   subline: React.ReactNode;
+  /** Primary CTA button */
+  primaryCta?: {
+    display: boolean;
+    label: string;
+    href: string;
+  };
+  /** Secondary CTA button */
+  secondaryCta?: {
+    display: boolean;
+    label: string;
+    href: string;
+  };
+  /** About section on Home */
+  about: {
+    display: boolean;
+    title: string;
+    description: React.ReactNode;
+  };
+  /** Skills section configuration */
+  skills: {
+    display: boolean;
+    title: string;
+    items: Array<{
+      title: string;
+      icon?: string;
+      level?: number; // 0-100
+    }>;
+  };
+  /** Services section configuration */
+  services: {
+    display: boolean;
+    title: string;
+    items: Service[];
+  };
+  /** Testimonials section configuration */
+  testimonials: {
+    display: boolean;
+    title: string;
+    items: Testimonial[];
+  };
+  /** Achievements section configuration */
+  achievements: {
+    display: boolean;
+    title: string;
+    items: Achievement[];
+  };
 }
 
 /**
  * About page configuration.
- * @description Configuration for the About page, including sections for table of contents, avatar, calendar, introduction, work experience, studies, and technical skills.
+ * @description Configuration for the About page.
  */
 export interface About extends BasePageConfig {
   /** Table of contents configuration */
   tableOfContent: {
-    /** Whether to display the table of contents */
     display: boolean;
-    /** Whether to show sub-items in the table of contents */
     subItems: boolean;
   };
   /** Avatar section configuration */
   avatar: {
-    /** Whether to display the avatar */
     display: boolean;
   };
   /** Calendar section configuration */
   calendar: {
-    /** Whether to display the calendar */
     display: boolean;
-    /** Link to the calendar */
     link: string;
   };
   /** Introduction section */
   intro: {
-    /** Whether to display the introduction */
     display: boolean;
-    /** Title of the introduction section */
     title: string;
-    /** Description of the introduction section */
     description: React.ReactNode;
   };
   /** Work experience section */
   work: {
-    /** Whether to display work experience */
     display: boolean;
-    /** Title for the work experience section */
     title: string;
-    /** List of work experiences */
     experiences: Array<{
-      /** Company name */
       company: string;
-      /** Timeframe of employment */
       timeframe: string;
-      /** Role or job title */
       role: string;
-      /** Achievements at the company */
       achievements: React.ReactNode[];
-      /** Images related to the experience */
       images?: Array<{
-        /** Image source path */
         src: string;
-        /** Image alt text */
         alt: string;
-        /** Image width ratio */
         width: number;
-        /** Image height ratio */
         height: number;
       }>;
     }>;
   };
   /** Studies/education section */
   studies: {
-    /** Whether to display studies section */
     display: boolean;
-    /** Title for the studies section */
     title: string;
-    /** List of institutions attended */
     institutions: Array<{
-      /** Institution name */
       name: string;
-      /** Description of studies */
       description: React.ReactNode;
     }>;
   };
-  /** Technical skills section */
+  /** Technical skills section (keeping for backward compatibility if needed, or migration) */
   technical: {
-    /** Whether to display technical skills section */
     display: boolean;
-    /** Title for the technical skills section */
     title: string;
-    /** List of technical skills */
     skills: Array<{
-      /** Skill title */
       title: string;
-      /** Skill description */
       description?: React.ReactNode;
-      /** Skill tags */
       tags?: Array<{
         name: string;
         icon?: string;
       }>;
-      /** Images related to the skill */
       images?: Array<{
-        /** Image source path */
         src: string;
-        /** Image alt text */
         alt: string;
-        /** Image width ratio */
         width: number;
-        /** Image height ratio */
         height: number;
       }>;
     }>;
@@ -213,28 +264,21 @@ export interface About extends BasePageConfig {
 
 /**
  * Blog page configuration.
- * @description Configuration for the Blog page, including metadata and navigation label.
  */
-export interface Blog extends BasePageConfig {}
+export interface Blog extends BasePageConfig { }
 
 /**
  * Work/projects page configuration.
- * @description Configuration for the Work/Projects page, including metadata and navigation label.
  */
-export interface Work extends BasePageConfig {}
+export interface Work extends BasePageConfig { }
 
 /**
  * Gallery page configuration.
- * @description Configuration for the Gallery page, including metadata, navigation label, and image list.
  */
 export interface Gallery extends BasePageConfig {
-  /** List of images in the gallery */
   images: Array<{
-    /** Image source path */
     src: string;
-    /** Image alt text */
     alt: string;
-    /** Image orientation (horizontal/vertical) */
     orientation: string;
   }>;
 }
