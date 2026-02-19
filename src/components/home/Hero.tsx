@@ -21,7 +21,7 @@ export const Hero = () => {
             horizontal="center"
             position="relative"
         >
-            <Column maxWidth="m" horizontal="center" gap="m" align="center">
+            <Column maxWidth="m" horizontal="center" gap="m">
                 {home.featured.display && (
                     <RevealFx translateY="4">
                         <Badge
@@ -36,7 +36,7 @@ export const Hero = () => {
                 )}
 
                 <RevealFx translateY="8" delay={0.2}>
-                    <Heading wrap="balance" variant="display-strong-l" align="center">
+                    <Heading wrap="balance" variant="display-strong-l">
                         {home.headline}
                     </Heading>
                 </RevealFx>
@@ -46,7 +46,6 @@ export const Hero = () => {
                         wrap="balance"
                         onBackground="neutral-weak"
                         variant="heading-default-xl"
-                        align="center"
                     >
                         {home.subline}
                     </Text>

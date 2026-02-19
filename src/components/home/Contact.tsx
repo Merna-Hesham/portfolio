@@ -28,9 +28,9 @@ export const Contact = () => {
             </RevealFx>
 
             <RevealFx translateY="8" delay={0.2}>
-                <Column horizontal="center" gap="16" align="center">
+                <Column horizontal="center" gap="16">
                     <Column maxWidth="s" horizontal="center">
-                        <Text variant="body-default-l" onBackground="neutral-weak" align="center">
+                        <Text variant="body-default-l" onBackground="neutral-weak">
                             Feel free to reach out for collaborations or just a friendly hello!
                         </Text>
                     </Column>

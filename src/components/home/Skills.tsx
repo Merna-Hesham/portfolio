@@ -50,7 +50,7 @@ export const Skills = () => {
                                         height="4"
                                         background="neutral-alpha-medium"
                                         radius="full"
-                                        overflow="hidden"
+                                        style={{ overflow: "hidden" }}
                                     >
                                         <Flex
                                             style={{ width: `${skill.level}%` }}

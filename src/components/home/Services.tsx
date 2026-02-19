@@ -44,18 +44,17 @@ export const Services = () => {
                             radius="l"
                             background="surface"
                             gap="16"
-                            height="full"
-                            align="center"
+                            horizontal="center"
                             style={{ minWidth: "240px", maxWidth: "320px" }}
                         >
                             {service.icon && (
                                 <Icon name={service.icon as IconName} size="xl" onBackground="brand-medium" />
                             )}
-                            <Heading as="h3" variant="heading-strong-m" align="center">
+                            <Heading as="h3" variant="heading-strong-m">
                                 {service.title}
                             </Heading>
 
-                            <Text variant="body-default-m" onBackground="neutral-weak" align="center">
+                            <Text variant="body-default-m" onBackground="neutral-weak">
                                 {service.description}
                             </Text>
                         </Column>
