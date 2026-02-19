@@ -69,7 +69,7 @@ export const AboutSection = () => {
                 </Column>
 
                 {/* Right Side: Description */}
-                <Column fillWidth flex={1.5} gap="24">
+                <Column fillWidth style={{ flex: 1.5 }} gap="24">
                     <RevealFx translateY="4">
                         <Text variant="label-default-s" onBackground="brand-medium">
                             ABOUT ME

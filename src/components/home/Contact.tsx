@@ -91,7 +91,7 @@ export const Contact = () => {
                 </Column>
 
                 {/* Right Side: Contact Form */}
-                <Column fillWidth flex={1.2} gap="24">
+                <Column fillWidth style={{ flex: 1.2 }} gap="24">
                     <RevealFx translateY="12" delay={0.4} fillWidth>
                         <Column
                             fillWidth
