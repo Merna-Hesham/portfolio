@@ -38,7 +38,7 @@ export const Experience = () => {
                             background="surface"
                             gap="12"
                         >
-                            <Row fillWidth spaceBetween vertical="center" wrap gap="8">
+                            <Row fillWidth horizontal="between" vertical="center" wrap gap="8">
                                 <Heading as="h3" variant="heading-strong-m">
                                     {job.role}
                                 </Heading>
