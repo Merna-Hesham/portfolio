@@ -62,7 +62,7 @@ export const ProjectCard = ({
           </Row>
           <Row gap="8" wrap>
             {tags?.map((tag) => (
-              <Badge key={tag} size="s">{tag}</Badge>
+              <Badge key={tag}>{tag}</Badge>
             ))}
           </Row>
         </Column>

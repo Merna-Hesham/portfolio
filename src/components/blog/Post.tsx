@@ -21,7 +21,7 @@ export default function Post({ post, thumbnail, direction }: PostProps) {
       border="transparent"
       background="transparent"
       padding="4"
-      radius="l-4"
+      radius="l"
       gap={direction === "column" ? undefined : "24"}
       s={{ direction: "column" }}
     >

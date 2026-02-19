@@ -79,7 +79,7 @@ export const Header = () => {
           <Row
             background="page"
             border="neutral-alpha-weak"
-            radius="m-4"
+            radius="m"
             shadow="l"
             padding="4"
             horizontal="center"

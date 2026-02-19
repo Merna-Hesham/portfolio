@@ -104,20 +104,20 @@ export const Contact = () => {
                             <Row gap="16" wrap>
                                 <Column fillWidth flex={1} gap="8">
                                     <Text variant="label-default-s">Full Name</Text>
-                                    <Input id="name" placeholder="Your Name" fillWidth />
+                                    <Input id="name" placeholder="Your Name" />
                                 </Column>
                                 <Column fillWidth flex={1} gap="8">
                                     <Text variant="label-default-s">Email Address</Text>
-                                    <Input id="email" placeholder="email@example.com" fillWidth />
+                                    <Input id="email" placeholder="email@example.com" />
                                 </Column>
                             </Row>
                             <Column gap="8">
                                 <Text variant="label-default-s">Subject</Text>
-                                <Input id="subject" placeholder="What is this about?" fillWidth />
+                                <Input id="subject" placeholder="What is this about?" />
                             </Column>
                             <Column gap="8">
                                 <Text variant="label-default-s">Message</Text>
-                                <Input id="message" placeholder="Your message here..." fillWidth />
+                                <Input id="message" placeholder="Your message here..." />
                             </Column>
                             <Button variant="primary" size="l" fillWidth style={{ marginTop: '8px' }}>
                                 Send Message

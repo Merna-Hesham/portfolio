@@ -90,7 +90,7 @@ export const Experience = () => {
                                                 {job.company}
                                             </Text>
                                         </Column>
-                                        <Badge size="m">
+                                        <Badge>
                                             {job.timeframe}
                                         </Badge>
                                     </Row>
@@ -98,7 +98,7 @@ export const Experience = () => {
                                     <Column gap="16">
                                         {job.achievements.map((item, i) => (
                                             <Row key={i} gap="12" vertical="start">
-                                                <Badge size="s">
+                                                <Badge>
                                                     {i === 0 ? "Goal" : i === 1 ? "Action" : "Result"}
                                                 </Badge>
                                                 <Text variant="body-default-m" onBackground="neutral-weak">
