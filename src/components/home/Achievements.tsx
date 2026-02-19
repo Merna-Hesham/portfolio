@@ -56,7 +56,7 @@ export const Achievements = () => {
                                 </Text>
                             )}
                             {item.link && (
-                                <Button href={item.link} variant="tertiary" size="s" width="fit">
+                                <Button href={item.link} variant="tertiary" size="s">
                                     View Verified Credential
                                 </Button>
                             )}

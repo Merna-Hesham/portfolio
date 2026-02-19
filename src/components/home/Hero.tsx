@@ -8,11 +8,9 @@ import {
     RevealFx,
     Row,
     Badge,
-    Avatar,
     Line,
 } from "@once-ui-system/core";
-import { home, person, about } from "@/resources";
-import styles from "./Hero.module.scss";
+import { home } from "@/resources";
 
 export const Hero = () => {
     return (
@@ -78,9 +76,6 @@ export const Hero = () => {
                     </Row>
                 </RevealFx>
             </Column>
-
-            {/* Optional: Hero Image or pattern could go here */}
-
         </Column>
     );
 };

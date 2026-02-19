@@ -10,6 +10,7 @@ import {
     Icon,
 } from "@once-ui-system/core";
 import { home } from "@/resources";
+import { IconName } from "@/resources/icons";
 
 export const Skills = () => {
     if (!home.skills.display) return null;
@@ -38,12 +39,11 @@ export const Skills = () => {
                             radius="m"
                             vertical="center"
                             gap="8"
-                            minWidth={140}
+                            style={{ minWidth: "140px" }}
                         >
-                            {skill.icon && <Icon name={skill.icon} size="m" />}
+                            {skill.icon && <Icon name={skill.icon as IconName} size="m" />}
                             <Column fillWidth gap="4">
                                 <Text variant="label-default-s">{skill.title}</Text>
-                                {/* Simple progress bar representation */}
                                 {skill.level && (
                                     <Flex
                                         fillWidth

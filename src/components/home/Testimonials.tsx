@@ -41,7 +41,7 @@ export const Testimonials = () => {
                             maxWidth="s"
                         >
                             <Text variant="body-default-m" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
-                                "{item.text}"
+                                &ldquo;{item.text}&rdquo;
                             </Text>
 
                             <Row gap="12" vertical="center">
@@ -50,8 +50,7 @@ export const Testimonials = () => {
                                 )}
                                 {!item.avatar && (
                                     <Flex
-                                        width="32"
-                                        height="32"
+                                        style={{ width: "32px", height: "32px" }}
                                         radius="full"
                                         background="neutral-weak"
                                         horizontal="center"

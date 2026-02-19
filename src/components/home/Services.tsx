@@ -9,6 +9,7 @@ import {
     Icon,
 } from "@once-ui-system/core";
 import { home } from "@/resources";
+import { IconName } from "@/resources/icons";
 
 export const Services = () => {
     if (!home.services?.display) return null;
@@ -45,11 +46,10 @@ export const Services = () => {
                             gap="16"
                             height="full"
                             align="center"
-                            minWidth={240}
-                            maxWidth={320}
+                            style={{ minWidth: "240px", maxWidth: "320px" }}
                         >
                             {service.icon && (
-                                <Icon name={service.icon} size="xl" onBackground="brand-medium" />
+                                <Icon name={service.icon as IconName} size="xl" onBackground="brand-medium" />
                             )}
                             <Heading as="h3" variant="heading-strong-m" align="center">
                                 {service.title}
