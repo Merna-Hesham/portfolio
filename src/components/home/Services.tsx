@@ -6,7 +6,6 @@ import {
     Text,
     RevealFx,
     Row,
-    Grid,
     Icon,
 } from "@once-ui-system/core";
 import { home } from "@/resources";
@@ -28,13 +27,12 @@ export const Services = () => {
                 </Heading>
             </RevealFx>
 
-            <Grid
-                columns="repeat(3, 1fr)"
+            <Row
                 gap="l"
-                s="1"
-                m="2"
-                maxWidth="l"
+                wrap
                 fillWidth
+                horizontal="center"
+                maxWidth="l"
             >
                 {home.services.items.map((service, index) => (
                     <RevealFx key={`${service.title}-${index}`} translateY="8" delay={index * 0.1}>
@@ -47,6 +45,8 @@ export const Services = () => {
                             gap="16"
                             height="full"
                             align="center"
+                            minWidth={240}
+                            maxWidth={320}
                         >
                             {service.icon && (
                                 <Icon name={service.icon} size="xl" onBackground="brand-medium" />
@@ -61,7 +61,7 @@ export const Services = () => {
                         </Column>
                     </RevealFx>
                 ))}
-            </Grid>
+            </Row>
         </Column>
     );
 };

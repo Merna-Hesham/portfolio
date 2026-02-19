@@ -52,15 +52,13 @@ export const Experience = () => {
                             </Text>
 
                             <Column gap="8" paddingLeft="16">
-                                {/* Assuming achievements is an array of ReactNodes */}
                                 {job.achievements.map((item, i) => (
-                                    <ul key={i} style={{ margin: 0, padding: 0, listStyleType: 'disc' }}>
-                                        <li>
-                                            <Text variant="body-default-s" onBackground="neutral-weak">
-                                                {item}
-                                            </Text>
-                                        </li>
-                                    </ul>
+                                    <Row key={i} gap="8" vertical="start">
+                                        <Text variant="body-default-s" onBackground="brand-medium">•</Text>
+                                        <Text variant="body-default-s" onBackground="neutral-weak">
+                                            {item}
+                                        </Text>
+                                    </Row>
                                 ))}
                             </Column>
                         </Column>

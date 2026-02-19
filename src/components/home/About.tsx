@@ -30,7 +30,7 @@ export const AboutSection = () => {
                         <Flex
                             border="neutral-alpha-medium"
                             radius="full"
-                            borderWidth={1}
+                            borderWidth="1"
                             padding="4"
                         >
                             <Avatar
