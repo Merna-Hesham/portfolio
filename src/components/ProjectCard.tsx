@@ -58,7 +58,7 @@ export const ProjectCard = ({
             <Heading as="h2" variant="heading-strong-l">
               {title}
             </Heading>
-            <Badge variant="brand-alpha-medium">Project</Badge>
+            <Badge>Project</Badge>
           </Row>
           <Row gap="8" wrap>
             {tags?.map((tag) => (
