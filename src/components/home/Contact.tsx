@@ -29,9 +29,11 @@ export const Contact = () => {
 
             <RevealFx translateY="8" delay={0.2}>
                 <Column horizontal="center" gap="16" align="center">
-                    <Text variant="body-default-l" onBackground="neutral-weak" align="center" maxWidth="s">
-                        Feel free to reach out for collaborations or just a friendly hello!
-                    </Text>
+                    <Column maxWidth="s" horizontal="center">
+                        <Text variant="body-default-l" onBackground="neutral-weak" align="center">
+                            Feel free to reach out for collaborations or just a friendly hello!
+                        </Text>
+                    </Column>
 
                     <Button
                         href={`mailto:${person.email}`}
