@@ -3,7 +3,7 @@
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
-import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
+import { Button, Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
 
 import { routes, display, person, about, blog, work } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
@@ -87,64 +87,43 @@ export const Header = () => {
           >
             <Row gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
               {routes["/"] && (
-                <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
+                <ToggleButton prefixIcon="home" href="/#top" label="Home" selected={pathname === "/"} />
               )}
               <Line background="neutral-alpha-medium" vert maxHeight="24" />
-              {routes["/about"] && (
-                <>
-                  <Row s={{ hide: true }}>
-                    <ToggleButton
-                      prefixIcon="person"
-                      href="/about"
-                      label={about.label}
-                      selected={pathname === "/about"}
-                    />
-                  </Row>
-                  <Row hide s={{ hide: false }}>
-                    <ToggleButton
-                      prefixIcon="person"
-                      href="/about"
-                      selected={pathname === "/about"}
-                    />
-                  </Row>
-                </>
-              )}
-              {routes["/work"] && (
-                <>
-                  <Row s={{ hide: true }}>
-                    <ToggleButton
-                      prefixIcon="grid"
-                      href="/work"
-                      label={work.label}
-                      selected={pathname.startsWith("/work")}
-                    />
-                  </Row>
-                  <Row hide s={{ hide: false }}>
-                    <ToggleButton
-                      prefixIcon="grid"
-                      href="/work"
-                      selected={pathname.startsWith("/work")}
-                    />
-                  </Row>
-                </>
-              )}
+              <ToggleButton
+                prefixIcon="person"
+                href="#about"
+                label="About"
+              />
+              <ToggleButton
+                prefixIcon="grid"
+                href="#skills"
+                label="Skills"
+              />
+              <ToggleButton
+                prefixIcon="layout"
+                href="#projects"
+                label="Projects"
+              />
+              <ToggleButton
+                prefixIcon="card"
+                href="#experience"
+                label="Experience"
+              />
+              <ToggleButton
+                prefixIcon="email"
+                href="#contact"
+                label="Contact"
+              />
               {routes["/blog"] && (
                 <>
-                  <Row s={{ hide: true }}>
-                    <ToggleButton
-                      prefixIcon="book"
-                      href="/blog"
-                      label={blog.label}
-                      selected={pathname.startsWith("/blog")}
-                    />
-                  </Row>
-                  <Row hide s={{ hide: false }}>
-                    <ToggleButton
-                      prefixIcon="book"
-                      href="/blog"
-                      selected={pathname.startsWith("/blog")}
-                    />
-                  </Row>
+                  <Line background="neutral-alpha-medium" vert maxHeight="24" />
+                  <ToggleButton
+                    prefixIcon="book"
+                    href="/blog"
+                    label="Blog"
+                    selected={pathname.startsWith("/blog")}
+                  />
                 </>
               )}
               {display.themeSwitcher && (
@@ -167,6 +146,15 @@ export const Header = () => {
             <Flex s={{ hide: true }}>
               {display.time && <TimeDisplay timeZone={person.location} />}
             </Flex>
+            <Button
+              href="#contact"
+              variant="primary"
+              size="s"
+              radius="m-4"
+              suffixIcon="email"
+            >
+              Get in Touch
+            </Button>
           </Flex>
         </Flex>
       </Row>

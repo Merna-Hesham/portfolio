@@ -9,58 +9,68 @@ import {
     Flex,
     Icon,
 } from "@once-ui-system/core";
-import { home } from "@/resources";
+import { about } from "@/resources";
 import { IconName } from "@/resources/icons";
 
 export const Skills = () => {
-    if (!home.skills.display) return null;
+    if (!about.technical.display) return null;
 
     return (
         <Column
             fillWidth
-            paddingY="32"
-            gap="l"
+            paddingY="80"
+            gap="48"
             horizontal="center"
             id="skills"
         >
-            <RevealFx translateY="4">
-                <Heading as="h2" variant="display-strong-xs" marginBottom="16">
-                    {home.skills.title}
-                </Heading>
-            </RevealFx>
+            <Column horizontal="center" gap="16">
+                <RevealFx translateY="4">
+                    <Text variant="label-default-s" onBackground="brand-medium">
+                        TECHNICAL EXPERTISE
+                    </Text>
+                </RevealFx>
+                <RevealFx translateY="8" delay={0.2}>
+                    <Heading as="h2" variant="display-strong-xs">
+                        {about.technical.title}
+                    </Heading>
+                </RevealFx>
+            </Column>
 
-            <Row gap="16" wrap fillWidth horizontal="center" maxWidth="m">
-                {home.skills.items.map((skill, index) => (
-                    <RevealFx key={`${skill.title}-${index}`} translateY="8" delay={index * 0.05}>
-                        <Flex
-                            padding="12"
+            <Row gap="24" wrap fillWidth maxWidth="l">
+                {about.technical.skills.map((skillGroup, index) => (
+                    <RevealFx key={skillGroup.title} translateY="12" delay={index * 0.1} flex={1}>
+                        <Column
+                            fillWidth
+                            padding="32"
                             border="neutral-alpha-weak"
-                            background="neutral-alpha-weak"
-                            radius="m"
-                            vertical="center"
-                            gap="8"
-                            style={{ minWidth: "140px" }}
+                            background="surface"
+                            radius="l"
+                            gap="24"
+                            style={{ minHeight: '100%' }}
                         >
-                            {skill.icon && <Icon name={skill.icon as IconName} size="m" />}
-                            <Column fillWidth gap="4">
-                                <Text variant="label-default-s">{skill.title}</Text>
-                                {skill.level && (
+                            <Heading as="h3" variant="heading-strong-s" onBackground="brand-medium">
+                                {skillGroup.title}
+                            </Heading>
+                            <Text variant="body-default-m" onBackground="neutral-medium">
+                                {skillGroup.description}
+                            </Text>
+                            <Row gap="8" wrap>
+                                {skillGroup.tags.map((tag) => (
                                     <Flex
-                                        fillWidth
-                                        height="4"
-                                        background="neutral-alpha-medium"
-                                        radius="full"
-                                        style={{ overflow: "hidden" }}
+                                        key={tag.name}
+                                        paddingX="12"
+                                        paddingY="8"
+                                        background="neutral-alpha-weak"
+                                        radius="m"
+                                        vertical="center"
+                                        gap="8"
                                     >
-                                        <Flex
-                                            style={{ width: `${skill.level}%` }}
-                                            background="brand-strong"
-                                            height="4"
-                                        />
+                                        <Icon name={tag.icon as IconName} size="s" />
+                                        <Text variant="label-default-s">{tag.name}</Text>
                                     </Flex>
-                                )}
-                            </Column>
-                        </Flex>
+                                ))}
+                            </Row>
+                        </Column>
                     </RevealFx>
                 ))}
             </Row>

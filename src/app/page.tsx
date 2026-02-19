@@ -15,12 +15,11 @@ import { home, about, person, baseURL } from "@/resources";
 import {
   Hero,
   About,
-  Education,
+  EducationAndAchievements,
   Skills,
+  Projects,
   Experience,
   Services,
-  Projects,
-  Achievements,
   Testimonials,
   Contact
 } from "@/components";
@@ -38,7 +37,7 @@ export async function generateMetadata() {
 
 export default function Home() {
   return (
-    <Column maxWidth="m" gap="xl" paddingY="12" horizontal="center">
+    <Column id="top" maxWidth="m" gap="xl" paddingY="12" horizontal="center">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -55,12 +54,11 @@ export default function Home() {
 
       <Hero />
       <About />
-      <Education />
+      <EducationAndAchievements />
       <Skills />
+      <Projects />
       <Experience />
       <Services />
-      <Projects />
-      <Achievements />
       <Testimonials />
       <Contact />
 
