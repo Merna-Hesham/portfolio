@@ -42,7 +42,7 @@ export const Experience = () => {
                                 <Heading as="h3" variant="heading-strong-m">
                                     {job.role}
                                 </Heading>
-                                <Badge variant="neutral" size="s">
+                                <Badge>
                                     {job.timeframe}
                                 </Badge>
                             </Row>

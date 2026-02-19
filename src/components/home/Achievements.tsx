@@ -43,7 +43,7 @@ export const Achievements = () => {
                                 <Heading as="h3" variant="heading-strong-s">
                                     {item.title}
                                 </Heading>
-                                <Badge variant="neutral" size="s">
+                                <Badge>
                                     {item.date}
                                 </Badge>
                             </Row>
