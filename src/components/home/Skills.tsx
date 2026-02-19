@@ -54,7 +54,7 @@ export const Skills = () => {
                                     >
                                         <Flex
                                             style={{ width: `${skill.level}%` }}
-                                            background="brand-solid-strong"
+                                            background="brand-strong"
                                             height="4"
                                         />
                                     </Flex>
