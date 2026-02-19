@@ -25,7 +25,7 @@ export const AboutSection = () => {
             id="about"
         >
             <RevealFx translateY="4" fillWidth>
-                <Row gap="32" vertical="center" horizontal="center" wrap mobileDirection="column">
+                <Row gap="32" vertical="center" horizontal="center" wrap s={{ direction: "column" }}>
                     {about.avatar.display && (
                         <Flex
                             border="neutral-alpha-medium"

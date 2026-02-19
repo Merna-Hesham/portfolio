@@ -31,8 +31,8 @@ export const Services = () => {
             <Grid
                 columns="repeat(3, 1fr)"
                 gap="l"
-                mobileColumns="1"
-                tabletColumns="2"
+                s="1"
+                m="2"
                 maxWidth="l"
                 fillWidth
             >
