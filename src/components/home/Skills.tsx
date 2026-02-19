@@ -55,7 +55,7 @@ export const Skills = () => {
                                 {skillGroup.description}
                             </Text>
                             <Row gap="8" wrap>
-                                {skillGroup.tags.map((tag) => (
+                                {skillGroup.tags?.map((tag) => (
                                     <Flex
                                         key={tag.name}
                                         paddingX="12"

@@ -92,7 +92,6 @@ export const Hero = () => {
                                     href={item.link}
                                     variant="tertiary"
                                     size="s"
-                                    radius="full"
                                     prefixIcon={item.icon as IconName}
                                     style={{ padding: '12px' }}
                                 />

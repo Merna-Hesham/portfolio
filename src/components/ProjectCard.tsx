@@ -22,7 +22,7 @@ interface ProjectCardProps {
   github: string;
 }
 
-export const ProjectCard: React.FC<ProjectCardProps> = ({
+export const ProjectCard = ({
   href,
   images = [],
   title,
@@ -30,7 +30,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   tags = [],
   link,
   github,
-}) => {
+}: ProjectCardProps) => {
   return (
     <Column
       fillWidth
@@ -61,7 +61,7 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
             <Badge variant="brand-alpha-medium">Project</Badge>
           </Row>
           <Row gap="8" wrap>
-            {tags.map((tag) => (
+            {tags?.map((tag) => (
               <Badge key={tag} size="s">{tag}</Badge>
             ))}
           </Row>

@@ -81,7 +81,6 @@ export const Contact = () => {
                                         href={item.link}
                                         variant="secondary"
                                         size="s"
-                                        radius="full"
                                         prefixIcon={item.icon as IconName}
                                         style={{ padding: '12px' }}
                                     />

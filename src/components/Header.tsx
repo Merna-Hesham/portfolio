@@ -14,7 +14,7 @@ type TimeDisplayProps = {
   locale?: string; // Optionally allow locale, defaulting to 'en-GB'
 };
 
-const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" }) => {
+const TimeDisplay = ({ timeZone, locale = "en-GB" }: TimeDisplayProps) => {
   const [currentTime, setCurrentTime] = useState("");
 
   useEffect(() => {
@@ -150,7 +150,7 @@ export const Header = () => {
               href="#contact"
               variant="primary"
               size="s"
-              radius="m-4"
+              radius="none"
               suffixIcon="email"
             >
               Get in Touch
