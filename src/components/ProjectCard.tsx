@@ -48,7 +48,7 @@ export const ProjectCard = ({
       />
       <Column
         fillWidth
-        padding="x-24"
+        paddingX="24"
         paddingBottom="24"
         paddingTop="16"
         gap="16"
