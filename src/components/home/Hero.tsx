@@ -50,14 +50,15 @@ export const Hero = () => {
                 </RevealFx>
 
                 <RevealFx translateY="16" delay={0.6}>
-                    <Text
-                        wrap="balance"
-                        onBackground="neutral-weak"
-                        variant="body-default-l"
-                        maxWidth="s"
-                    >
-                        {home.about.description}
-                    </Text>
+                    <Column maxWidth="s">
+                        <Text
+                            wrap="balance"
+                            onBackground="neutral-weak"
+                            variant="body-default-l"
+                        >
+                            {home.about.description}
+                        </Text>
+                    </Column>
                 </RevealFx>
 
                 <RevealFx translateY="20" delay={0.8}>

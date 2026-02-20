@@ -57,9 +57,9 @@ export const Services = () => {
                         >
                             {/* Background Index Number */}
                             <Text
-                                position="absolute"
                                 variant="display-strong-xl"
                                 style={{
+                                    position: 'absolute',
                                     top: '0',
                                     right: '-10px',
                                     fontSize: '150px',
