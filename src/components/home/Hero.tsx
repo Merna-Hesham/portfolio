@@ -77,6 +77,7 @@ export const Hero = () => {
                                 href={home.secondaryCta.href}
                                 variant="secondary"
                                 size="l"
+                                suffixIcon="download"
                             >
                                 {home.secondaryCta.label}
                             </Button>

@@ -63,11 +63,11 @@ const home: Home = {
   headline: <>Merna Hesham</>,
   subline: (
     <>
-      Flutter & Android Native Mobile App Developer
+      Flutter Mobile App Developer
     </>
   ),
   featured: {
-    display: true,
+    display: false,
     title: (
       <Row gap="12" vertical="center">
         <strong className="ml-4">Goia</strong>{" "}
@@ -86,18 +86,16 @@ const home: Home = {
   },
   secondaryCta: {
     display: true,
-    label: "Contact Me",
-    href: "#contact",
+    label: "Download Resume",
+    href: "https://drive.google.com/file/d/1cne4m_cSK4LbYc3s0ArECeqzzsgnDUUg/view",
   },
   about: {
     display: true,
     title: "About Me",
     description: (
       <>
-        I am an AI-driven fresh graduate specializing in mobile development, UI/UX, and AI systems with computer vision integration.
-        <br /><br />
-        As a Co-founder and COO of Goia, I successfully led the project from ideation to launch, securing funding and international recognition.
-        I combine technical expertise in Flutter and Native Android with a strong business mindset.
+        Mobile App Developer specializing in Flutter & dart.
+        I combine technical expertise in Flutter with a strong business mindset.
       </>
     ),
   },
@@ -123,11 +121,6 @@ const home: Home = {
         title: "Mobile App Development",
         description: "Building high-performance, cross-platform mobile applications using Flutter and Native Android.",
         icon: "mobile",
-      },
-      {
-        title: "UI/UX Design",
-        description: "Designing intuitive and visually appealing user interfaces for mobile and web applications.",
-        icon: "design",
       },
       {
         title: "AI Integration",
@@ -185,7 +178,7 @@ const about: About = {
     subItems: false,
   },
   avatar: {
-    display: true,
+    display: false,
   },
   calendar: {
     display: false, // Set to true if you have a cal.com link
