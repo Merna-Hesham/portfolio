@@ -17,8 +17,10 @@ type Metadata = {
   image?: string;
   images: string[];
   tag?: string;
+  tags: string[];
   team: Team[];
   link?: string;
+  github?: string;
 };
 
 import { notFound } from "next/navigation";
@@ -28,7 +30,7 @@ function getMDXFiles(dir: string) {
     notFound();
   }
 
-  return fs.readdirSync(dir).filter((file) => path.extname(file) === ".mdx");
+  return fs.readdirSync(dir).filter((file: string) => path.extname(file) === ".mdx");
 }
 
 function readMDXFile(filePath: string) {
@@ -46,9 +48,11 @@ function readMDXFile(filePath: string) {
     summary: data.summary || "",
     image: data.image || "",
     images: data.images || [],
-    tag: data.tag || [],
+    tag: data.tag || "",
+    tags: data.tags || [],
     team: data.team || [],
     link: data.link || "",
+    github: data.github || "",
   };
 
   return { metadata, content };
@@ -56,7 +60,7 @@ function readMDXFile(filePath: string) {
 
 function getMDXData(dir: string) {
   const mdxFiles = getMDXFiles(dir);
-  return mdxFiles.map((file) => {
+  return mdxFiles.map((file: string) => {
     const { metadata, content } = readMDXFile(path.join(dir, file));
     const slug = path.basename(file, path.extname(file));
 
