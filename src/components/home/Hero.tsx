@@ -130,7 +130,7 @@ export const Hero = () => {
                         <Flex
                             radius="full"
                             border="brand-alpha-strong"
-                            borderWidth="4"
+                            borderWidth={4}
                             padding="8"
                             style={{
                                 zIndex: 1,
