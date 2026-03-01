@@ -8,3 +8,7 @@ export { Providers } from "@/components/Providers";
 export { ScrollToHash } from "@/components/ScrollToHash";
 export { ThemeToggle } from "@/components/ThemeToggle";
 export { CustomMDX } from "@/components/mdx";
+export { Services } from "@/components/Services";
+export { Testimonials } from "@/components/Testimonials";
+export { Contact } from "@/components/Contact";
+export { AboutSection, ExperienceSection, EducationSection, SkillsSection } from "@/components/AboutSection";

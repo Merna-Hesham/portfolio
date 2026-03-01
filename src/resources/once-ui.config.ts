@@ -71,11 +71,12 @@ const fonts: FontsConfig = {
 };
 
 // default customization applied to the HTML in the main layout.tsx
+// Using custom color palette: Hot Fuchsia, International Klein Blue, Soft Blush, Alabaster Grey
 const style: StyleConfig = {
   theme: "dark", // dark | light | system
-  neutral: "gray", // sand | gray | slate | custom
-  brand: "pink", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
-  accent: "pink", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
+  neutral: "custom", // sand | gray | slate | custom (using Soft Blush + Alabaster Grey)
+  brand: "custom", // custom (using Hot Fuchsia #fd525f)
+  accent: "custom", // custom (using International Klein Blue #002bad)
   solid: "contrast", // color | contrast
   solidStyle: "flat", // flat | plastic
   border: "playful", // rounded | playful | conservative

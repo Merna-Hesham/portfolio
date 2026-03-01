@@ -1,17 +1,14 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-
-import { Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
-
-import { routes, display, person, about, blog, work } from "@/resources";
+import { Fade, Flex, Line, Row, ToggleButton, Text } from "@once-ui-system/core";
+import { display, person } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
 
 type TimeDisplayProps = {
   timeZone: string;
-  locale?: string; // Optionally allow locale, defaulting to 'en-GB'
+  locale?: string;
 };
 
 const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" }) => {
@@ -42,8 +39,51 @@ const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" })
 
 export default TimeDisplay;
 
+const navItems = [
+  { label: "Home", href: "#home", icon: "home" },
+  { label: "About", href: "#about", icon: "person" },
+  { label: "Education", href: "#education", icon: "book" },
+  { label: "Skills", href: "#skills", icon: "code" },
+  { label: "Experience", href: "#experience", icon: "grid" },
+  { label: "Services", href: "#services", icon: "lightbulb" },
+  { label: "Projects", href: "#projects", icon: "grid" },
+  { label: "Testimonials", href: "#testimonials", icon: "chat" },
+];
+
 export const Header = () => {
-  const pathname = usePathname() ?? "";
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map((item) => item.href.replace("#", ""));
+
+      for (const section of sections.reverse()) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 150) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const id = href.replace("#", "");
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setActiveSection(id);
+    }
+  };
 
   return (
     <>
@@ -86,67 +126,28 @@ export const Header = () => {
             zIndex={1}
           >
             <Row gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
-              {routes["/"] && (
-                <ToggleButton prefixIcon="home" href="/" selected={pathname === "/"} />
-              )}
-              <Line background="neutral-alpha-medium" vert maxHeight="24" />
-              {routes["/about"] && (
-                <>
+              {navItems.map((item, index) => (
+                <Row key={item.label}>
+                  {/* Desktop: show label */}
                   <Row s={{ hide: true }}>
                     <ToggleButton
-                      prefixIcon="person"
-                      href="/about"
-                      label={about.label}
-                      selected={pathname === "/about"}
+                      href={item.href}
+                      label={item.label}
+                      selected={activeSection === item.href.replace("#", "")}
+                      onClick={(e: any) => handleClick(e, item.href)}
                     />
                   </Row>
+                  {/* Mobile: show icon only */}
                   <Row hide s={{ hide: false }}>
                     <ToggleButton
-                      prefixIcon="person"
-                      href="/about"
-                      selected={pathname === "/about"}
+                      prefixIcon={item.icon}
+                      href={item.href}
+                      selected={activeSection === item.href.replace("#", "")}
+                      onClick={(e: any) => handleClick(e, item.href)}
                     />
                   </Row>
-                </>
-              )}
-              {routes["/work"] && (
-                <>
-                  <Row s={{ hide: true }}>
-                    <ToggleButton
-                      prefixIcon="grid"
-                      href="/work"
-                      label={work.label}
-                      selected={pathname.startsWith("/work")}
-                    />
-                  </Row>
-                  <Row hide s={{ hide: false }}>
-                    <ToggleButton
-                      prefixIcon="grid"
-                      href="/work"
-                      selected={pathname.startsWith("/work")}
-                    />
-                  </Row>
-                </>
-              )}
-              {routes["/blog"] && (
-                <>
-                  <Row s={{ hide: true }}>
-                    <ToggleButton
-                      prefixIcon="book"
-                      href="/blog"
-                      label={blog.label}
-                      selected={pathname.startsWith("/blog")}
-                    />
-                  </Row>
-                  <Row hide s={{ hide: false }}>
-                    <ToggleButton
-                      prefixIcon="book"
-                      href="/blog"
-                      selected={pathname.startsWith("/blog")}
-                    />
-                  </Row>
-                </>
-              )}
+                </Row>
+              ))}
               {display.themeSwitcher && (
                 <>
                   <Line background="neutral-alpha-medium" vert maxHeight="24" />

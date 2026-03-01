@@ -1,4 +1,4 @@
-import { About, Blog, Home, Newsletter, Person, Social, Work } from "@/types";
+import { About, Blog, Contact, Home, Newsletter, Person, Services, Social, Testimonials, Work } from "@/types";
 import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
@@ -241,5 +241,78 @@ const work: Work = {
   // All projects will be listed on the /home and /work routes
 };
 
-export { person, social, newsletter, home, about, blog, work };
+const services: Services = {
+  display: true,
+  title: "Services",
+  subtitle: "What I can do for you",
+  items: [
+    {
+      icon: "smartphone",
+      title: "Mobile App Development",
+      description: "Building high-performance native and cross-platform mobile applications using Flutter, Kotlin, and Jetpack Compose.",
+    },
+    {
+      icon: "code",
+      title: "AI & Machine Learning",
+      description: "Integrating intelligent features using ML, Deep Learning, NLP, and Computer Vision into applications.",
+    },
+    {
+      icon: "figma",
+      title: "UI/UX Design",
+      description: "Creating intuitive and beautiful user interfaces with Figma, focusing on user experience and accessibility.",
+    },
+    {
+      icon: "cloud",
+      title: "Backend & Cloud",
+      description: "Developing scalable backend solutions with Firebase, REST APIs, and Google Cloud Platform integration.",
+    },
+    {
+      icon: "lightbulb",
+      title: "Product Strategy",
+      description: "From ideation to launch - helping transform ideas into successful products with strategic planning.",
+    },
+    {
+      icon: "refresh",
+      title: "App Optimization",
+      description: "Performance tuning, code optimization, and ensuring smooth user experiences across all devices.",
+    },
+  ],
+};
+
+const testimonials: Testimonials = {
+  display: true,
+  title: "Testimonials",
+  items: [
+    {
+      name: "Ahmed Hassan",
+      role: "Project Manager",
+      company: "GenZ Program Egypt",
+      content: "Merna's dedication and technical expertise in developing Goia were exceptional. Her ability to integrate AI with mobile development created a truly innovative product.",
+    },
+    {
+      name: "Sara Mohamed",
+      role: "UX Lead",
+      company: "Enpact Berlin",
+      content: "Working with Merna was a great experience. Her attention to detail in UI/UX and her understanding of user needs made our collaboration highly productive.",
+    },
+    {
+      name: "Dr. Khaled Ibrahim",
+      role: "Professor",
+      company: "Kafr El-Sheikh University",
+      content: "Merna demonstrated outstanding academic performance and practical skills. Her graduation project showcased her deep understanding of AI and mobile development.",
+    },
+  ],
+};
+
+const contact: Contact = {
+  display: true,
+  title: "Get In Touch",
+  subtitle: "Let's work together",
+  email: person.email,
+  phone: "+20 123 456 7890",
+  location: "Cairo, Egypt",
+  showForm: true,
+};
+
+export { person, social, newsletter, home, about, blog, work, services, testimonials, contact };
 
