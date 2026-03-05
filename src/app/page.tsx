@@ -13,6 +13,7 @@ import {
   ServicesSection,
   ProjectsSection,
   TestimonialsSection,
+  ContactSection,
 } from "@/components/sections";
 
 export async function generateMetadata() {
@@ -69,6 +70,8 @@ export default function Home() {
         {/* 8. Testimonials */}
         <TestimonialsSection />
 
+        {/* 9. Contact */}
+        <ContactSection />
       </Column>
     </Column>
   );

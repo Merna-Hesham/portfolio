@@ -61,8 +61,13 @@ const home: Home = {
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
   headline: <>Merna Hesham</>,
+  subline: (
+    <>
+      Flutter Mobile App Developer
+    </>
+  ),
   featured: {
-    display: true,
+    display: false,
     title: (
       <Row gap="12" vertical="center">
         <strong className="ml-4">Goia</strong>{" "}
@@ -74,11 +79,93 @@ const home: Home = {
     ),
     href: "/work/goia",
   },
-  subline: (
-    <>
-      Flutter & Android Native Mobile App Developer
-    </>
-  ),
+  primaryCta: {
+    display: true,
+    label: "View Projects",
+    href: "#projects",
+  },
+  secondaryCta: {
+    display: true,
+    label: "Download Resume",
+    href: "https://drive.google.com/file/d/1cne4m_cSK4LbYc3s0ArECeqzzsgnDUUg/view",
+  },
+  about: {
+    display: true,
+    title: "About Me",
+    description: (
+      <>
+        Mobile App Developer specializing in Flutter & dart.
+        I combine technical expertise in Flutter with a strong business mindset.
+      </>
+    ),
+  },
+  skills: {
+    display: true,
+    title: "Skills & Expertise",
+    items: [
+      { title: "Flutter", icon: "flutter", level: 90 },
+      { title: "Android Native", icon: "android", level: 85 },
+      { title: "Kotlin", icon: "kotlin", level: 85 },
+      { title: "Dart", icon: "dart", level: 90 },
+      { title: "Firebase", icon: "firebase", level: 80 },
+      { title: "UI/UX Design", icon: "figma", level: 75 },
+      { title: "AI Integration", icon: "smart", level: 70 },
+      { title: "Git & GitHub", icon: "github", level: 85 },
+    ],
+  },
+  services: {
+    display: true,
+    title: "Services",
+    items: [
+      {
+        title: "Mobile App Development",
+        description: "Building high-performance, cross-platform mobile applications using Flutter and Native Android.",
+        icon: "mobile",
+      },
+      {
+        title: "AI Integration",
+        description: "Integrating AI and machine learning models into mobile applications for enhanced functionality.",
+        icon: "smart",
+      },
+    ],
+  },
+  testimonials: {
+    display: true,
+    title: "Testimonials",
+    items: [
+      {
+        name: "Client Name",
+        role: "Position",
+        text: "Merna delivered an exceptional mobile application that exceeded our expectations. Her attention to detail and technical expertise are top-notch.",
+        avatar: "",
+      },
+      {
+        name: "Colleague Name",
+        role: "Developer",
+        text: "Working with Merna was a great experience. She is a team player and always ready to help solve complex problems.",
+        avatar: "",
+      }
+    ],
+  },
+  achievements: {
+    display: true,
+    title: "Achievements",
+    items: [
+      {
+        title: "GenZ Program Funding",
+        organization: "Egypt's GenZ Program",
+        date: "2024",
+        description: "Secured 1.5M EGP funding for Goia, an AI-powered virtual tour guide app.",
+        link: "https://www.linkedin.com/posts/merna-hesham-8a94b92b5_genz-startup-entrepreneurship-activity-724364...", // truncated real link if needed
+      },
+      {
+        title: "Enpact Incubation Program",
+        organization: "Enpact Berlin",
+        date: "2024",
+        description: "Selected for the prestigious Enpact incubation program in Berlin.",
+      },
+    ],
+  },
 };
 
 const about: About = {
@@ -87,11 +174,11 @@ const about: About = {
   title: `About – ${person.name}`,
   description: `Meet ${person.name}, ${person.role} from ${person.location}`,
   tableOfContent: {
-    display: true,
+    display: false,
     subItems: false,
   },
   avatar: {
-    display: true,
+    display: false,
   },
   calendar: {
     display: false, // Set to true if you have a cal.com link

@@ -51,13 +51,12 @@ export const Mailchimp: React.FC<React.ComponentProps<typeof Column>> = ({ ...fl
 
   return (
     <Column
-      overflow="hidden"
+      style={{ overflow: 'hidden' }}
       fillWidth
       padding="xl"
       radius="l"
       marginBottom="m"
       horizontal="center"
-      align="center"
       background="surface"
       border="neutral-alpha-weak"
       {...flex}
