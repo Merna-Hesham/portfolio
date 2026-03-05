@@ -1,20 +1,17 @@
 "use client";
 
-import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
-
-import { Button, Fade, Flex, Line, Row, ToggleButton } from "@once-ui-system/core";
-
-import { routes, display, person, about, blog, work } from "@/resources";
+import { Fade, Flex, Line, Row, ToggleButton, Text } from "@once-ui-system/core";
+import { display, person } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
 
 type TimeDisplayProps = {
   timeZone: string;
-  locale?: string; // Optionally allow locale, defaulting to 'en-GB'
+  locale?: string;
 };
 
-const TimeDisplay = ({ timeZone, locale = "en-GB" }: TimeDisplayProps) => {
+const TimeDisplay: React.FC<TimeDisplayProps> = ({ timeZone, locale = "en-GB" }) => {
   const [currentTime, setCurrentTime] = useState("");
 
   useEffect(() => {
@@ -42,8 +39,51 @@ const TimeDisplay = ({ timeZone, locale = "en-GB" }: TimeDisplayProps) => {
 
 export default TimeDisplay;
 
+const navItems = [
+  { label: "Home", href: "#home", icon: "home" },
+  { label: "About", href: "#about", icon: "person" },
+  { label: "Education", href: "#education", icon: "book" },
+  { label: "Skills", href: "#skills", icon: "code" },
+  { label: "Experience", href: "#experience", icon: "grid" },
+  { label: "Services", href: "#services", icon: "lightbulb" },
+  { label: "Projects", href: "#projects", icon: "grid" },
+  { label: "Testimonials", href: "#testimonials", icon: "chat" },
+];
+
 export const Header = () => {
-  const pathname = usePathname() ?? "";
+  const [activeSection, setActiveSection] = useState("home");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const sections = navItems.map((item) => item.href.replace("#", ""));
+
+      for (const section of sections.reverse()) {
+        const element = document.getElementById(section);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          if (rect.top <= 150) {
+            setActiveSection(section);
+            break;
+          }
+        }
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    handleScroll();
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const id = href.replace("#", "");
+    const element = document.getElementById(id);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setActiveSection(id);
+    }
+  };
 
   return (
     <>
@@ -79,53 +119,35 @@ export const Header = () => {
           <Row
             background="page"
             border="neutral-alpha-weak"
-            radius="m"
+            radius="m-4"
             shadow="l"
             padding="4"
             horizontal="center"
             zIndex={1}
           >
             <Row gap="4" vertical="center" textVariant="body-default-s" suppressHydrationWarning>
-              {routes["/"] && (
-                <ToggleButton prefixIcon="home" href="/#top" label="Home" selected={pathname === "/"} />
-              )}
-              <Line background="neutral-alpha-medium" vert maxHeight="24" />
-              <ToggleButton
-                prefixIcon="person"
-                href="#about"
-                label="About"
-              />
-              <ToggleButton
-                prefixIcon="grid"
-                href="#skills"
-                label="Skills"
-              />
-              <ToggleButton
-                prefixIcon="layout"
-                href="#projects"
-                label="Projects"
-              />
-              <ToggleButton
-                prefixIcon="card"
-                href="#experience"
-                label="Experience"
-              />
-              <ToggleButton
-                prefixIcon="email"
-                href="#contact"
-                label="Contact"
-              />
-              {routes["/blog"] && (
-                <>
-                  <Line background="neutral-alpha-medium" vert maxHeight="24" />
-                  <ToggleButton
-                    prefixIcon="book"
-                    href="/blog"
-                    label="Blog"
-                    selected={pathname.startsWith("/blog")}
-                  />
-                </>
-              )}
+              {navItems.map((item, index) => (
+                <Row key={item.label}>
+                  {/* Desktop: show label */}
+                  <Row s={{ hide: true }}>
+                    <ToggleButton
+                      href={item.href}
+                      label={item.label}
+                      selected={activeSection === item.href.replace("#", "")}
+                      onClick={(e: any) => handleClick(e, item.href)}
+                    />
+                  </Row>
+                  {/* Mobile: show icon only */}
+                  <Row hide s={{ hide: false }}>
+                    <ToggleButton
+                      prefixIcon={item.icon}
+                      href={item.href}
+                      selected={activeSection === item.href.replace("#", "")}
+                      onClick={(e: any) => handleClick(e, item.href)}
+                    />
+                  </Row>
+                </Row>
+              ))}
               {display.themeSwitcher && (
                 <>
                   <Line background="neutral-alpha-medium" vert maxHeight="24" />
@@ -146,15 +168,6 @@ export const Header = () => {
             <Flex s={{ hide: true }}>
               {display.time && <TimeDisplay timeZone={person.location} />}
             </Flex>
-            <Button
-              href="#contact"
-              variant="primary"
-              size="s"
-              radius="none"
-              suffixIcon="email"
-            >
-              Get in Touch
-            </Button>
           </Flex>
         </Flex>
       </Row>

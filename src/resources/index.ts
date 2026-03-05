@@ -7,6 +7,9 @@ export {
   about,
   blog,
   work,
+  services,
+  testimonials,
+  contact,
 } from "./content";
 
 export {

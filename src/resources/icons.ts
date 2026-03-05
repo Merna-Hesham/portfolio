@@ -12,6 +12,14 @@ import {
   HiOutlineDocument,
   HiOutlineGlobeAsiaAustralia,
   HiOutlineRocketLaunch,
+  HiDevicePhoneMobile,
+  HiOutlineCodeBracket,
+  HiOutlineCloud,
+  HiOutlineLightBulb,
+  HiOutlineArrowPath,
+  HiOutlineChatBubbleLeftRight,
+  HiOutlineMapPin,
+  HiOutlinePhone,
 } from "react-icons/hi2";
 
 import {
@@ -86,6 +94,14 @@ export const iconLibrary: Record<string, IconType> = {
   jupyter: SiJupyter,
   java: FaJava,
   link: HiOutlineLink,
+  smartphone: HiDevicePhoneMobile,
+  code: HiOutlineCodeBracket,
+  cloud: HiOutlineCloud,
+  lightbulb: HiOutlineLightBulb,
+  refresh: HiOutlineArrowPath,
+  chat: HiOutlineChatBubbleLeftRight,
+  mapPin: HiOutlineMapPin,
+  phone: HiOutlinePhone,
 };
 
 export type IconLibrary = typeof iconLibrary;

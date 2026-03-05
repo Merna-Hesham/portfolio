@@ -1,28 +1,20 @@
 import {
-  Heading,
-  Text,
-  Button,
-  Avatar,
-  RevealFx,
   Column,
-  Badge,
-  Row,
   Schema,
   Meta,
-  Line,
 } from "@once-ui-system/core";
 import { home, about, person, baseURL } from "@/resources";
 import {
-  Hero,
-  About,
-  EducationAndAchievements,
-  Skills,
-  Projects,
-  Experience,
-  Services,
-  Testimonials,
-  Contact
-} from "@/components";
+  HeroSection,
+  AboutMeSection,
+  EducationSection,
+  SkillsSection,
+  ExperienceSection,
+  ServicesSection,
+  ProjectsSection,
+  TestimonialsSection,
+  ContactSection,
+} from "@/components/sections";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -34,10 +26,9 @@ export async function generateMetadata() {
   });
 }
 
-
 export default function Home() {
   return (
-    <Column id="top" maxWidth="m" gap="xl" paddingY="12" horizontal="center">
+    <Column fillWidth horizontal="center">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -52,16 +43,37 @@ export default function Home() {
         }}
       />
 
-      <Hero />
-      <About />
-      <EducationAndAchievements />
-      <Skills />
-      <Projects />
-      <Experience />
-      <Services />
-      <Testimonials />
-      <Contact />
+      {/* All sections in a single-page layout */}
+      <Column fillWidth maxWidth="l" paddingX="l" gap="0">
 
+        {/* 1. Cover / Hero */}
+        <HeroSection />
+
+        {/* 2. About Me */}
+        <AboutMeSection />
+
+        {/* 3. Education */}
+        <EducationSection />
+
+        {/* 4. Skills */}
+        <SkillsSection />
+
+        {/* 5. Work Experience */}
+        <ExperienceSection />
+
+        {/* 6. Services */}
+        <ServicesSection />
+
+        {/* 7. Projects */}
+        <ProjectsSection />
+
+        {/* 8. Testimonials */}
+        <TestimonialsSection />
+
+        {/* 9. Contact */}
+        <ContactSection />
+
+      </Column>
     </Column>
   );
 }
