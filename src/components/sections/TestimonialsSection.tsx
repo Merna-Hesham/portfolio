@@ -91,6 +91,7 @@ export const TestimonialsSection = () => {
 
           {/* Ghost prev */}
           <div
+            className="t-ghost"
             onClick={prev}
             onMouseEnter={() => setHoveredSide("prev")}
             onMouseLeave={() => setHoveredSide(null)}
@@ -148,7 +149,7 @@ export const TestimonialsSection = () => {
               transition: "color 0.25s ease",
             }}>&#8220;</div>
 
-            <div style={{ padding: "40px 40px 36px", display: "flex", flexDirection: "column", gap: "24px" }}>
+            <div className="t-card-inner" style={{ padding: "40px 40px 36px", display: "flex", flexDirection: "column", gap: "24px" }}>
               {/* Stars */}
               <div style={{ display: "flex", gap: "4px" }}>
                 {[1,2,3,4,5].map(s => (
@@ -212,6 +213,7 @@ export const TestimonialsSection = () => {
 
           {/* Ghost next */}
           <div
+            className="t-ghost"
             onClick={next}
             onMouseEnter={() => setHoveredSide("next")}
             onMouseLeave={() => setHoveredSide(null)}

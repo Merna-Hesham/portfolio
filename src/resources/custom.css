@@ -262,3 +262,17 @@ a {
   0%   { background-position: -200% 0; }
   100% { background-position:  200% 0; }
 }
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+@media (max-width: 640px) {
+  /* Testimonials: hide ghost side cards */
+  .t-ghost { display: none !important; }
+
+  /* Testimonials: reduce card padding */
+  .t-card-inner { padding: 28px 20px 24px !important; }
+
+  /* Hero avatar: shrink on small screens */
+  #home .avatar-circle { width: 170px !important; height: 170px !important; }
+}

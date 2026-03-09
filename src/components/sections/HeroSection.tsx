@@ -123,7 +123,7 @@ export const HeroSection = () => {
             border: `2px solid ${BRAND}33`,
           }} />
           {/* Photo */}
-          <div style={{ width: "220px", height: "220px", borderRadius: "50%", overflow: "hidden" }}>
+          <div className="avatar-circle" style={{ width: "220px", height: "220px", borderRadius: "50%", overflow: "hidden" }}>
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img
               src={person.avatar}
