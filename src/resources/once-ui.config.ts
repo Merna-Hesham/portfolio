@@ -36,24 +36,27 @@ const protectedRoutes: ProtectedRoutesConfig = {
 };
 
 // Import and set font for each variant
-import { Geist } from "next/font/google";
+import { Poppins } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
 
-const heading = Geist({
+const heading = Poppins({
   variable: "--font-heading",
   subsets: ["latin"],
+  weight: ["600", "700", "800"],
   display: "swap",
 });
 
-const body = Geist({
+const body = Poppins({
   variable: "--font-body",
   subsets: ["latin"],
+  weight: ["400", "500"],
   display: "swap",
 });
 
-const label = Geist({
+const label = Poppins({
   variable: "--font-label",
   subsets: ["latin"],
+  weight: ["400", "500", "600"],
   display: "swap",
 });
 
@@ -71,11 +74,12 @@ const fonts: FontsConfig = {
 };
 
 // default customization applied to the HTML in the main layout.tsx
+// Using custom color palette: Hot Fuchsia, International Klein Blue, Soft Blush, Alabaster Grey
 const style: StyleConfig = {
   theme: "dark", // dark | light | system
-  neutral: "gray", // sand | gray | slate | custom
-  brand: "pink", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
-  accent: "pink", // blue | indigo | violet | magenta | pink | red | orange | yellow | moss | green | emerald | aqua | cyan | custom
+  neutral: "custom" as any, // sand | gray | slate | custom (using Soft Blush + Alabaster Grey)
+  brand: "custom" as any, // custom (using Hot Fuchsia #fd525f)
+  accent: "custom" as any, // custom (using International Klein Blue #002bad)
   solid: "contrast", // color | contrast
   solidStyle: "flat", // flat | plastic
   border: "playful", // rounded | playful | conservative
@@ -117,11 +121,10 @@ const effects: EffectsConfig = {
     colorEnd: "page-background",
   },
   dots: {
-    display: true,
+    display: false,
     opacity: 40,
     size: "2",
     color: "brand-background-strong",
-    // color: "brand-on-background-weak",
   },
   grid: {
     display: false,

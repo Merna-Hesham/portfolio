@@ -41,7 +41,7 @@ export const Testimonials = () => {
                             maxWidth="s"
                         >
                             <Text variant="body-default-m" onBackground="neutral-weak" style={{ fontStyle: "italic" }}>
-                                &ldquo;{item.text}&rdquo;
+                                &ldquo;{item.content}&rdquo;
                             </Text>
 
                             <Row gap="12" vertical="center">

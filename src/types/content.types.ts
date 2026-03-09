@@ -85,32 +85,6 @@ export interface BasePageConfig {
 
 
 /**
- * Service configuration.
- */
-export type Service = {
-  /** Title of the service */
-  title: string;
-  /** Description of the service */
-  description: string;
-  /** Icon for the service (optional) */
-  icon?: string;
-};
-
-/**
- * Testimonial configuration.
- */
-export type Testimonial = {
-  /** Name of the person providing the testimonial */
-  name: string;
-  /** Role/Title of the person */
-  role: string;
-  /** The testimonial text */
-  text: string;
-  /** Avatar image of the person (optional) */
-  avatar?: string;
-};
-
-/**
  * Achievement configuration.
  */
 export type Achievement = {
@@ -271,6 +245,80 @@ export interface Blog extends BasePageConfig { }
  * Work/projects page configuration.
  */
 export interface Work extends BasePageConfig { }
+
+/**
+ * Service item configuration.
+ */
+export type Service = {
+  /** Icon for the service */
+  icon: IconName;
+  /** Service title */
+  title: string;
+  /** Service description */
+  description: string;
+};
+
+/**
+ * Services section configuration.
+ */
+export type Services = {
+  /** Whether to display the services section */
+  display: boolean;
+  /** Title for the services section */
+  title: string;
+  /** Subtitle for the services section */
+  subtitle?: string;
+  /** List of services */
+  items: Service[];
+};
+
+/**
+ * Testimonial item configuration.
+ */
+export type Testimonial = {
+  /** Name of the person giving testimonial */
+  name: string;
+  /** Role/title of the person */
+  role: string;
+  /** Company or organization */
+  company: string;
+  /** Avatar image path */
+  avatar?: string;
+  /** Testimonial content */
+  content: string;
+};
+
+/**
+ * Testimonials section configuration.
+ */
+export type Testimonials = {
+  /** Whether to display the testimonials section */
+  display: boolean;
+  /** Title for the testimonials section */
+  title: string;
+  /** List of testimonials */
+  items: Testimonial[];
+};
+
+/**
+ * Contact section configuration.
+ */
+export type Contact = {
+  /** Whether to display the contact section */
+  display: boolean;
+  /** Title for the contact section */
+  title: string;
+  /** Subtitle for the contact section */
+  subtitle?: string;
+  /** Contact email */
+  email: string;
+  /** Contact phone (optional) */
+  phone?: string;
+  /** Location text */
+  location?: string;
+  /** Whether to show contact form */
+  showForm: boolean;
+}
 
 /**
  * Gallery page configuration.

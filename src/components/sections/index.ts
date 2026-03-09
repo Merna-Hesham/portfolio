@@ -1,0 +1,10 @@
+export { HeroSection } from "./HeroSection";
+export { AboutMeSection } from "./AboutMeSection";
+export { EducationSection } from "./EducationSection";
+export { SkillsSection } from "./SkillsSection";
+export { ExperienceSection } from "./ExperienceSection";
+export { ServicesSection } from "./ServicesSection";
+export { ProjectsSection } from "./ProjectsSection";
+export { AchievementsSection } from "./AchievementsSection";
+export { TestimonialsSection } from "./TestimonialsSection";
+export { ContactSection } from "./ContactSection";
