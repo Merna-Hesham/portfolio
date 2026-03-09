@@ -20,6 +20,7 @@ import {
   HiOutlineChatBubbleLeftRight,
   HiOutlineMapPin,
   HiOutlinePhone,
+  HiAcademicCap,
 } from "react-icons/hi2";
 
 import {
@@ -102,6 +103,7 @@ export const iconLibrary: Record<string, IconType> = {
   chat: HiOutlineChatBubbleLeftRight,
   mapPin: HiOutlineMapPin,
   phone: HiOutlinePhone,
+  graduationCap: HiAcademicCap,
 };
 
 export type IconLibrary = typeof iconLibrary;

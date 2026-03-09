@@ -6,7 +6,7 @@ const person: Person = {
   lastName: "Hesham",
   name: "Merna Hesham",
   role: "Mobile App Developer",
-  avatar: "/images/merna_avatar.jpg", // Replace with your actual avatar image
+  avatar: "/images/merna_avatar.png",
   email: "mernahesham2003@gmail.com",
   location: "Africa/Cairo",
   languages: ["Arabic", "English"],
@@ -136,13 +136,15 @@ const home: Home = {
       {
         name: "Client Name",
         role: "Position",
-        text: "Merna delivered an exceptional mobile application that exceeded our expectations. Her attention to detail and technical expertise are top-notch.",
+        company: "",
+        content: "Merna delivered an exceptional mobile application that exceeded our expectations. Her attention to detail and technical expertise are top-notch.",
         avatar: "",
       },
       {
         name: "Colleague Name",
         role: "Developer",
-        text: "Working with Merna was a great experience. She is a team player and always ready to help solve complex problems.",
+        company: "",
+        content: "Working with Merna was a great experience. She is a team player and always ready to help solve complex problems.",
         avatar: "",
       }
     ],

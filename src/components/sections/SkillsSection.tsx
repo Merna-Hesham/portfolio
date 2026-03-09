@@ -87,7 +87,7 @@ const CircularSkill = ({
           transition: "transform 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
         }}
       >
-        <svg width="100" height="100" style={{ transform: "rotate(-90deg)" }}>
+        <svg width="100" height="100" style={{ transform: "rotate(-90deg)", overflow: "visible" }}>
           {/* Background circle */}
           <circle
             cx="50"
@@ -149,24 +149,19 @@ const CircularSkill = ({
             width: "32px",
             height: "32px",
             borderRadius: "50%",
-            background: isHovered
-              ? "var(--brand-strong)"
-              : "var(--surface)",
-            border: "2px solid var(--brand-strong)",
+            background: "var(--surface)",
+            boxShadow: isHovered
+              ? `0 0 0 2px #FF073D, 0 4px 18px #FF073D80`
+              : "0 0 0 2px #FF073D50",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            boxShadow: isHovered ? "0 4px 15px var(--brand-alpha-strong)" : "none",
             transition: "all 0.3s ease",
           }}
         >
           <Text
             variant="label-strong-xs"
-            style={{
-              fontSize: "10px",
-              color: isHovered ? "white" : undefined,
-            }}
-            onBackground={isHovered ? undefined : "brand-strong"}
+            style={{ fontSize: "10px", color: "#FF073D" }}
           >
             {skill.percentage}
           </Text>
@@ -229,7 +224,7 @@ export const SkillsSection = () => {
           left: "-100px",
           width: "420px",
           height: "420px",
-          background: "radial-gradient(circle, var(--brand-alpha-weak) 0%, transparent 60%)",
+          background: "transparent",
           transform: "translateY(-50%)",
           pointerEvents: "none",
           animation: isVisible ? "pulse 4.5s ease-in-out infinite" : "none",
@@ -243,7 +238,7 @@ export const SkillsSection = () => {
           right: "-80px",
           width: "350px",
           height: "350px",
-          background: "radial-gradient(circle, var(--brand-alpha-weak) 0%, transparent 65%)",
+          background: "transparent",
           pointerEvents: "none",
           animation: isVisible ? "pulse 5.5s ease-in-out 1s infinite" : "none",
           zIndex: 0,
@@ -272,6 +267,7 @@ export const SkillsSection = () => {
         <Heading as="h2" variant="display-strong-l">
           Skills
         </Heading>
+        <div style={{ width:"48px", height:"3px", borderRadius:"2px", background:"#FF073D", margin:"0 auto" }} />
       </Column>
 
       {/* Skills Content — full width */}
@@ -390,12 +386,12 @@ export const SkillsSection = () => {
                   padding: "12px 20px",
                   borderRadius: "50px",
                   background: hoveredSoft === index
-                    ? "var(--brand-strong)"
+                    ? "#FF073D18"
                     : "var(--brand-alpha-weak)",
-                  border: `1px solid ${hoveredSoft === index ? "transparent" : "var(--brand-alpha-medium)"}`,
+                  border: `1px solid ${hoveredSoft === index ? "#FF073D60" : "var(--brand-alpha-medium)"}`,
                   transform: hoveredSoft === index ? "scale(1.05)" : "scale(1)",
                   boxShadow: hoveredSoft === index
-                    ? "0 10px 30px var(--brand-alpha-strong)"
+                    ? "0 10px 30px #FF073D20"
                     : "none",
                   transition: "all 0.4s cubic-bezier(0.16, 1, 0.3, 1)",
                   cursor: "default",
@@ -406,12 +402,11 @@ export const SkillsSection = () => {
                 <Icon
                   name={skill.icon}
                   size="s"
-                  onBackground={hoveredSoft === index ? "page" : "brand-strong"}
+                  onBackground="brand-strong"
                 />
                 <Text
                   variant="body-strong-s"
-                  style={{ color: hoveredSoft === index ? "white" : undefined }}
-                  onBackground={hoveredSoft === index ? undefined : "brand-strong"}
+                  onBackground="brand-strong"
                 >
                   {skill.name}
                 </Text>

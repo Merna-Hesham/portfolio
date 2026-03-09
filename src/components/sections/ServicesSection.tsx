@@ -54,7 +54,7 @@ export const ServicesSection = () => {
           left: "-100px",
           width: "460px",
           height: "460px",
-          background: "radial-gradient(circle, var(--brand-alpha-weak) 0%, transparent 60%)",
+          background: "transparent",
           pointerEvents: "none",
           animation: isVisible ? "pulse 5s ease-in-out infinite" : "none",
           zIndex: 0,
@@ -67,7 +67,7 @@ export const ServicesSection = () => {
           right: "-80px",
           width: "380px",
           height: "380px",
-          background: "radial-gradient(circle, var(--brand-alpha-weak) 0%, transparent 65%)",
+          background: "transparent",
           pointerEvents: "none",
           animation: isVisible ? "pulse 7s ease-in-out 2s infinite" : "none",
           zIndex: 0,
@@ -96,6 +96,7 @@ export const ServicesSection = () => {
         <Heading as="h2" variant="display-strong-l">
           Services
         </Heading>
+        <div style={{ width:"48px", height:"3px", borderRadius:"2px", background:"#FF073D", margin:"0 auto" }} />
         <Text
           variant="body-default-l"
           onBackground="neutral-weak"
@@ -162,7 +163,7 @@ export const ServicesSection = () => {
                   right: 0,
                   width: "160px",
                   height: "160px",
-                  background: "radial-gradient(circle at top right, var(--brand-alpha-weak) 0%, transparent 70%)",
+                  background: "transparent",
                   pointerEvents: "none",
                 }}
               />
@@ -186,13 +187,13 @@ export const ServicesSection = () => {
                 }}
               >
                 <Icon
-                  name={service.icon}
+                  name={service.icon!}
                   size="l"
-                  onBackground={hoveredService === index ? "page" : "brand-strong"}
+                  onBackground={hoveredService === index ? "neutral-strong" : "brand-strong"}
                 />
               </div>
 
-              <Column gap="10">
+              <Column gap={"10" as any}>
                 <Heading as="h3" variant="heading-strong-l">
                   {service.title}
                 </Heading>
@@ -288,9 +289,9 @@ export const ServicesSection = () => {
                   }}
                 >
                   <Icon
-                    name={service.icon}
+                    name={service.icon!}
                     size="m"
-                    onBackground={hoveredService === actualIndex ? "page" : "brand-strong"}
+                    onBackground={hoveredService === actualIndex ? "neutral-strong" : "brand-strong"}
                   />
                 </div>
 

@@ -68,8 +68,8 @@ export const ProjectsSection = () => {
     <Column ref={sectionRef} fillWidth gap="48" paddingY="80" id="projects" style={{ position: "relative" }}>
 
       {/* Background gradients */}
-      <div style={{ position: "absolute", top: "20%", right: "-100px", width: "420px", height: "420px", background: "radial-gradient(circle, var(--brand-alpha-weak) 0%, transparent 60%)", pointerEvents: "none", animation: isVisible ? "pulse 6s ease-in-out infinite" : "none", zIndex: 0 }} />
-      <div style={{ position: "absolute", bottom: "15%", left: "-80px", width: "360px", height: "360px", background: "radial-gradient(circle, var(--brand-alpha-weak) 0%, transparent 65%)", pointerEvents: "none", animation: isVisible ? "pulse 7s ease-in-out 2s infinite" : "none", zIndex: 0 }} />
+      <div style={{ position: "absolute", top: "20%", right: "-100px", width: "420px", height: "420px", background: "transparent", pointerEvents: "none", animation: isVisible ? "pulse 6s ease-in-out infinite" : "none", zIndex: 0 }} />
+      <div style={{ position: "absolute", bottom: "15%", left: "-80px", width: "360px", height: "360px", background: "transparent", pointerEvents: "none", animation: isVisible ? "pulse 7s ease-in-out 2s infinite" : "none", zIndex: 0 }} />
 
       {/* ── Centered header + filters ── */}
       <Column
@@ -89,6 +89,7 @@ export const ProjectsSection = () => {
         <Heading as="h2" variant="display-strong-l">
           Projects
         </Heading>
+        <div style={{ width:"48px", height:"3px", borderRadius:"2px", background:"#FF073D", margin:"0 auto" }} />
 
         <Row gap="8" wrap horizontal="center">
           {filters.map((filter) => (
@@ -229,7 +230,7 @@ export const ProjectsSection = () => {
                 </Text>
 
                 {/* Divider */}
-                <div style={{ height: "1px", background: hoveredProject === index ? "linear-gradient(90deg, var(--brand-alpha-medium), transparent)" : "var(--neutral-alpha-weak)", transition: "all 0.4s ease" }} />
+                <div style={{ height: "1px", background: hoveredProject === index ? "rgba(255, 7, 61, 0.25)" : "var(--neutral-alpha-weak)", transition: "all 0.4s ease" }} />
 
                 {/* Link */}
                 <div>

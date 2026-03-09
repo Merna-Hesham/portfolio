@@ -48,6 +48,7 @@ const navItems = [
   { label: "Services", href: "#services", icon: "lightbulb" },
   { label: "Projects", href: "#projects", icon: "grid" },
   { label: "Testimonials", href: "#testimonials", icon: "chat" },
+  { label: "Contact",      href: "#contact",      icon: "email" },
 ];
 
 export const Header = () => {

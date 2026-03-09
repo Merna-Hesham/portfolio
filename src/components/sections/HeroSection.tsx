@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import Image from "next/image";
 import { Column, Row, Text } from "@once-ui-system/core";
 import { person } from "@/resources";
 
@@ -76,26 +75,31 @@ export const HeroSection = () => {
             <span style={{ width: "10px", height: "10px", borderRadius: "50%", background: BRAND, display: "block" }} />
           </div>
           <div style={{
-            width: "160px",
+            width: "180px",
             overflow: "hidden",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
+            height: "1.4rem",
+            position: "relative",
           }}>
             <div style={{
+              position: "absolute",
               opacity:    roleFade ? 1 : 0,
-              transform:  roleFade ? "translateY(0)" : "translateY(-8px)",
-              transition: "opacity 0.3s cubic-bezier(0.4,0,0.2,1), transform 0.3s cubic-bezier(0.4,0,0.2,1)",
+              transform:  roleFade ? "translateY(0) scale(1)" : "translateY(-12px) scale(0.95)",
+              transition: "opacity 0.4s cubic-bezier(0.4,0,0.2,1), transform 0.4s cubic-bezier(0.16,1,0.3,1)",
               willChange: "opacity, transform",
               whiteSpace: "nowrap",
             }}>
               <span style={{
-                color: SHADOW,
+                background: `linear-gradient(90deg, ${BRAND}, ${SHADOW})`,
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
                 fontFamily: "var(--font-heading)",
                 fontWeight: 700,
                 fontSize: "1rem",
                 letterSpacing: "0.01em",
-                whiteSpace: "nowrap",
               }}>
                 {ROLES[roleIdx]}
               </span>
@@ -109,23 +113,22 @@ export const HeroSection = () => {
         <div style={{ position: "relative", display: "inline-block" }}>
           {/* Spinning dashed ring */}
           <div style={{
-            position: "absolute", inset: "-8px", borderRadius: "50%",
+            position: "absolute", inset: "-10px", borderRadius: "50%",
             border: `1.5px dashed ${BRAND}55`,
             animation: "hSpin 20s linear infinite",
           }} />
           {/* Solid ring */}
           <div style={{
-            position: "absolute", inset: "-3px", borderRadius: "50%",
+            position: "absolute", inset: "-4px", borderRadius: "50%",
             border: `2px solid ${BRAND}33`,
           }} />
           {/* Photo */}
-          <div style={{ width: "150px", height: "150px", borderRadius: "50%", overflow: "hidden" }}>
-            <Image
+          <div style={{ width: "220px", height: "220px", borderRadius: "50%", overflow: "hidden" }}>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img
               src={person.avatar}
               alt={person.name}
-              width={150}
-              height={150}
-              style={{ objectFit: "cover", width: "100%", height: "100%" }}
+              style={{ objectFit: "cover", objectPosition: "center 10%", width: "120%", height: "120%", marginLeft: "-10%", marginTop: "-10%" }}
             />
           </div>
         </div>
@@ -160,38 +163,45 @@ export const HeroSection = () => {
 
       {/* ── CTAs ── */}
       <Row gap="16" horizontal="center" wrap style={{ marginBottom: "56px", ...fadeUp(0.36) }}>
+        {/* View My Work — white bg, pink border + text */}
         <a
           href="#projects"
+          className="roll-btn roll-btn--outline-brand"
           style={{
-            display: "inline-flex", alignItems: "center", gap: "10px",
+            display: "inline-flex", alignItems: "center",
             padding: "14px 32px", borderRadius: "100px",
-            background: BRAND, color: "#FFE9F3",
+            background: "#FFFFFF",
+            border: `2px solid ${BRAND}`,
             fontFamily: "var(--font-heading)", fontWeight: 600, fontSize: "1rem",
             textDecoration: "none", letterSpacing: "0.01em",
-            transition: "opacity .2s ease",
+            overflow: "hidden", position: "relative",
           }}
-          onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = "0.85"; }}
-          onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.opacity = "1"; }}
         >
-          View My Work
+          <span className="roll-text">
+            <span data-text="View My Work">View My Work</span>
+          </span>
         </a>
+
+        {/* Download CV — pink bg, white text (reverse) */}
         <a
           href="https://drive.google.com/file/d/1cne4m_cSK4LbYc3s0ArECeqzzsgnDUUg/view"
           target="_blank"
           rel="noopener noreferrer"
+          className="roll-btn roll-btn--solid-brand"
           style={{
-            display: "inline-flex", alignItems: "center", gap: "10px",
-            padding: "13px 32px", borderRadius: "100px",
-            background: "#080707", color: "#FFE9F3",
-            fontFamily: "var(--font-heading)", fontWeight: 500, fontSize: "1rem",
+            display: "inline-flex", alignItems: "center",
+            padding: "14px 32px", borderRadius: "100px",
+            background: BRAND,
+            border: `2px solid ${BRAND}`,
+            color: "#FFFFFF",
+            fontFamily: "var(--font-heading)", fontWeight: 600, fontSize: "1rem",
             textDecoration: "none", letterSpacing: "0.01em",
-            border: "1px solid var(--neutral-border-strong)",
-            transition: "border-color .2s ease",
+            overflow: "hidden", position: "relative",
           }}
-          onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = BRAND; }}
-          onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.borderColor = "var(--neutral-border-strong)"; }}
         >
-          Download CV
+          <span className="roll-text">
+            <span data-text="Download CV">Download CV</span>
+          </span>
         </a>
       </Row>
 
@@ -229,6 +239,33 @@ export const HeroSection = () => {
         @keyframes hSpin {
           to { transform: rotate(360deg); }
         }
+
+        /* ── Roll button ── */
+        .roll-btn { cursor: pointer; }
+        .roll-text {
+          display: block;
+          position: relative;
+          overflow: hidden;
+          line-height: 1;
+        }
+        .roll-text span {
+          display: block;
+          color: inherit;
+          transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .roll-text span::after {
+          content: attr(data-text);
+          position: absolute;
+          top: 100%;
+          left: 0;
+          width: 100%;
+          color: inherit;
+        }
+        .roll-btn:hover .roll-text span {
+          transform: translateY(-100%);
+        }
+        .roll-btn--outline-brand { color: ${BRAND}; }
+        .roll-btn--solid-brand   { color: #FFFFFF; }
       `}</style>
     </Column>
   );

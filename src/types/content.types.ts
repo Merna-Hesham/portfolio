@@ -85,32 +85,6 @@ export interface BasePageConfig {
 
 
 /**
- * Service configuration.
- */
-export type Service = {
-  /** Title of the service */
-  title: string;
-  /** Description of the service */
-  description: string;
-  /** Icon for the service (optional) */
-  icon?: string;
-};
-
-/**
- * Testimonial configuration.
- */
-export type Testimonial = {
-  /** Name of the person providing the testimonial */
-  name: string;
-  /** Role/Title of the person */
-  role: string;
-  /** The testimonial text */
-  text: string;
-  /** Avatar image of the person (optional) */
-  avatar?: string;
-};
-
-/**
  * Achievement configuration.
  */
 export type Achievement = {

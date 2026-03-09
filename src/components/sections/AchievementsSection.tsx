@@ -46,6 +46,7 @@ export const AchievementsSection = () => {
         <Heading as="h2" variant="display-strong-l">
           Achievements
         </Heading>
+        <div style={{ width:"48px", height:"3px", borderRadius:"2px", background:"#FF073D", margin:"0 auto" }} />
       </Column>
 
       <Row fillWidth wrap gap="l" horizontal="center">
