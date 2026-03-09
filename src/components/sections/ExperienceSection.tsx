@@ -49,7 +49,7 @@ export const ExperienceSection = () => {
           right: "-120px",
           width: "480px",
           height: "480px",
-          background: "radial-gradient(circle, var(--brand-alpha-weak) 0%, transparent 60%)",
+          background: "transparent",
           pointerEvents: "none",
           animation: isVisible ? "pulse 6s ease-in-out infinite" : "none",
           zIndex: 0,
@@ -62,7 +62,7 @@ export const ExperienceSection = () => {
           left: "-100px",
           width: "360px",
           height: "360px",
-          background: "radial-gradient(circle, var(--brand-alpha-weak) 0%, transparent 65%)",
+          background: "transparent",
           pointerEvents: "none",
           animation: isVisible ? "pulse 7s ease-in-out 2s infinite" : "none",
           zIndex: 0,
@@ -91,6 +91,7 @@ export const ExperienceSection = () => {
         <Heading as="h2" variant="display-strong-l">
           Experience
         </Heading>
+        <div style={{ width:"48px", height:"3px", borderRadius:"2px", background:"#FF073D", margin:"0 auto" }} />
       </Column>
 
       <Row gap="64" wrap style={{ zIndex: 1 }}>
@@ -136,7 +137,7 @@ export const ExperienceSection = () => {
                   right: 0,
                   width: "60px",
                   height: "60px",
-                  background: "radial-gradient(circle at top right, var(--brand-alpha-weak) 0%, transparent 70%)",
+                  background: "transparent",
                   pointerEvents: "none",
                 }}
               />
@@ -170,7 +171,7 @@ export const ExperienceSection = () => {
             transition: "opacity 0.6s ease 0.5s",
           }}
         >
-          <Icon name="rocket" size="m" onBackground="page" />
+          <Icon name="rocket" size="m" onBackground="neutral-strong" />
         </div>
       </Column>
 
@@ -235,7 +236,7 @@ export const ExperienceSection = () => {
                 left: 0,
                 width: "180px",
                 height: "180px",
-                background: "radial-gradient(circle at top left, var(--brand-alpha-weak) 0%, transparent 70%)",
+                background: "transparent",
                 pointerEvents: "none",
               }}
             />
@@ -260,7 +261,7 @@ export const ExperienceSection = () => {
             <div style={{ padding: "28px 28px 28px 36px" }}>
               {/* Header row */}
               <Row fillWidth horizontal="between" vertical="start" wrap gap="12" style={{ marginBottom: "20px" }}>
-                <Column gap="6">
+                <Column gap={"6" as any}>
                   {/* Company label */}
                   <Row gap="8" vertical="center">
                     <div
@@ -317,7 +318,7 @@ export const ExperienceSection = () => {
                 style={{
                   height: "1px",
                   background: hoveredExp === index
-                    ? "linear-gradient(90deg, var(--brand-alpha-medium), transparent)"
+                    ? "rgba(255, 7, 61, 0.25)"
                     : "var(--neutral-alpha-weak)",
                   marginBottom: "20px",
                   transition: "all 0.4s ease",
@@ -325,7 +326,7 @@ export const ExperienceSection = () => {
               />
 
               {/* Achievements */}
-              <Column gap="10">
+              <Column gap={"10" as any}>
                 {exp.achievements.map((achievement, i) => (
                   <Text
                     key={i}

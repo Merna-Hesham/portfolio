@@ -1,79 +1,45 @@
 /* ============================================
-   Custom Brand Colors - Hot Fuchsia Palette
-   Colors: hot_fuchsia, international_klein_blue, soft_blush, alabaster_grey
+   Brand Palette
+   #FF073D  primary pink
+   #FD3D65  shadow / stroke pink
+   #FFE9F3  light / white
+   #080707  dark / black
    ============================================ */
 
-/* ============================================
-   BASE COLOR SCHEMES (applies to both themes)
-   ============================================ */
 :root {
-  /* Brand Color Scale (Hot Fuchsia - #fd525f) */
-  --scheme-brand-100: #430106;
-  --scheme-brand-200: #85010c;
-  --scheme-brand-300: #c80213;
-  --scheme-brand-400: #fd1124;
-  --scheme-brand-500: #fd525f;
-  --scheme-brand-600: #fd525f;
-  --scheme-brand-700: #fe7681;
-  --scheme-brand-800: #fe98a0;
-  --scheme-brand-900: #febac0;
-  --scheme-brand-1000: #ffdddf;
-  --scheme-brand-1100: #ffeef0;
-  --scheme-brand-1200: #fff7f8;
-  --scheme-brand-600-10: rgba(253, 82, 95, 0.1);
-  --scheme-brand-600-30: rgba(253, 82, 95, 0.3);
-  --scheme-brand-600-50: rgba(253, 82, 95, 0.5);
+  /* Brand scale */
+  --scheme-brand-100: #1a0008;
+  --scheme-brand-200: #4d0016;
+  --scheme-brand-300: #800025;
+  --scheme-brand-400: #cc003b;
+  --scheme-brand-500: #FF073D;
+  --scheme-brand-600: #FF073D;
+  --scheme-brand-700: #fd3d65;
+  --scheme-brand-800: #fd7290;
+  --scheme-brand-900: #fea8ba;
+  --scheme-brand-1000: #ffd4e0;
+  --scheme-brand-1100: #ffe9f3;
+  --scheme-brand-1200: #fff4f8;
+  --scheme-brand-600-10: rgba(255, 7, 61, 0.1);
+  --scheme-brand-600-30: rgba(255, 7, 61, 0.3);
+  --scheme-brand-600-50: rgba(255, 7, 61, 0.5);
 
-  /* Accent Color Scale (International Klein Blue - #002bad) */
-  --scheme-accent-100: #000923;
-  --scheme-accent-200: #001145;
-  --scheme-accent-300: #001a68;
-  --scheme-accent-400: #00238b;
-  --scheme-accent-500: #002bad;
-  --scheme-accent-600: #003cf1;
-  --scheme-accent-700: #3568ff;
-  --scheme-accent-800: #789aff;
-  --scheme-accent-900: #bccdff;
-  --scheme-accent-1000: #dde6ff;
-  --scheme-accent-1100: #eef2ff;
-  --scheme-accent-1200: #f7f9ff;
-  --scheme-accent-600-10: rgba(0, 60, 241, 0.1);
-  --scheme-accent-600-30: rgba(0, 60, 241, 0.3);
-  --scheme-accent-600-50: rgba(0, 60, 241, 0.5);
-
-  /* Neutral Color Scale (Soft Blush + Alabaster Grey) */
-  --scheme-neutral-100: #1a1616;
-  --scheme-neutral-200: #2f2a2a;
-  --scheme-neutral-300: #454040;
-  --scheme-neutral-400: #5e5858;
-  --scheme-neutral-500: #787171;
-  --scheme-neutral-600: #8d8686;
-  --scheme-neutral-700: #a8a2a2;
-  --scheme-neutral-800: #c4bfbf;
-  --scheme-neutral-900: #dcd8d8;
-  --scheme-neutral-1000: #eaeaea;
-  --scheme-neutral-1100: #f6e0da;
-  --scheme-neutral-1200: #fbf3f0;
-  --scheme-neutral-600-10: rgba(141, 134, 134, 0.1);
-  --scheme-neutral-600-30: rgba(141, 134, 134, 0.3);
-  --scheme-neutral-600-50: rgba(141, 134, 134, 0.5);
-
-  /* Custom Variables */
-  --gradient-brand: linear-gradient(135deg, #fd525f 0%, #fe7681 50%, #789aff 100%);
-  --gradient-accent: linear-gradient(135deg, #002bad 0%, #3568ff 100%);
-  --gradient-warm: linear-gradient(135deg, #fd525f 0%, #f6e0da 100%);
-  --gradient-cool: linear-gradient(135deg, #002bad 0%, #bccdff 100%);
-  --gradient-brand-accent: linear-gradient(135deg, #fd525f 0%, #002bad 100%);
-
-  /* Semantic Colors */
-  --success: #10b981;
-  --success-light: rgba(16, 185, 129, 0.1);
-  --warning: #f59e0b;
-  --warning-light: rgba(245, 158, 11, 0.1);
-  --error: #ef4444;
-  --error-light: rgba(239, 68, 68, 0.1);
-  --info: #3568ff;
-  --info-light: rgba(53, 104, 255, 0.1);
+  /* Neutral scale (dark → FFE9F3 light) */
+  --scheme-neutral-100: #080707;
+  --scheme-neutral-200: #161313;
+  --scheme-neutral-300: #2a2626;
+  --scheme-neutral-400: #3e3939;
+  --scheme-neutral-500: #5c5656;
+  --scheme-neutral-600: #7a7474;
+  --scheme-neutral-700: #a09898;
+  --scheme-neutral-800: #c6bfc1;
+  --scheme-neutral-900: #ddd5d8;
+  --scheme-neutral-1000: #ede8ea;
+  --scheme-neutral-1100: #ffe9f3;
+  --scheme-neutral-1200: #fff7fb;
+  --scheme-neutral-600-10: rgba(122, 116, 116, 0.1);
+  --scheme-neutral-600-30: rgba(122, 116, 116, 0.3);
+  --scheme-neutral-600-50: rgba(122, 116, 116, 0.5);
 }
 
 /* ============================================
@@ -81,89 +47,84 @@
    ============================================ */
 [data-theme="dark"],
 [data-brand="custom"][data-theme="dark"] {
-  /* Page Background */
-  --page-background: #0f0a0a;
-  --surface: rgba(253, 82, 95, 0.03);
-  --surface-strong: rgba(253, 82, 95, 0.06);
+  --page-background: #080707;
+  --surface: rgba(255, 7, 61, 0.03);
+  --surface-strong: rgba(255, 7, 61, 0.06);
 
-  /* Brand Colors - Hot Fuchsia for dark mode */
-  --brand-solid-strong: #fd525f;
-  --brand-solid-medium: #fe7681;
-  --brand-solid-weak: #fe98a0;
-  --brand-background-strong: #fd525f;
-  --brand-background-medium: rgba(253, 82, 95, 0.2);
-  --brand-background-weak: rgba(253, 82, 95, 0.1);
-  --brand-on-background-strong: #fd525f;
-  --brand-on-background-medium: #fe7681;
-  --brand-on-background-weak: #fe98a0;
-  --brand-on-solid-strong: #ffffff;
-  --brand-on-solid-medium: rgba(255, 255, 255, 0.9);
-  --brand-on-solid-weak: rgba(255, 255, 255, 0.7);
-  --brand-border-strong: #fd525f;
-  --brand-border-medium: rgba(253, 82, 95, 0.5);
-  --brand-border-weak: rgba(253, 82, 95, 0.2);
-  --brand-alpha-strong: rgba(253, 82, 95, 0.5);
-  --brand-alpha-medium: rgba(253, 82, 95, 0.3);
-  --brand-alpha-weak: rgba(253, 82, 95, 0.1);
+  /* Brand */
+  --brand-solid-strong: #FF073D;
+  --brand-solid-medium: #FD3D65;
+  --brand-solid-weak: #fd7290;
+  --brand-background-strong: #FF073D;
+  --brand-background-medium: rgba(255, 7, 61, 0.2);
+  --brand-background-weak: rgba(255, 7, 61, 0.1);
+  --brand-on-background-strong: #FF073D;
+  --brand-on-background-medium: #FD3D65;
+  --brand-on-background-weak: #fd7290;
+  --brand-on-solid-strong: #FFE9F3;
+  --brand-on-solid-medium: rgba(255, 233, 243, 0.9);
+  --brand-on-solid-weak: rgba(255, 233, 243, 0.7);
+  --brand-border-strong: #FF073D;
+  --brand-border-medium: #FD3D65;
+  --brand-border-weak: rgba(255, 7, 61, 0.2);
+  --brand-alpha-strong: rgba(255, 7, 61, 0.5);
+  --brand-alpha-medium: rgba(255, 7, 61, 0.3);
+  --brand-alpha-weak: rgba(255, 7, 61, 0.1);
 
-  /* Accent Colors - International Klein Blue for dark mode */
-  --accent-solid-strong: #3568ff;
-  --accent-solid-medium: #789aff;
-  --accent-solid-weak: #bccdff;
-  --accent-background-strong: #3568ff;
-  --accent-background-medium: rgba(53, 104, 255, 0.2);
-  --accent-background-weak: rgba(53, 104, 255, 0.1);
-  --accent-on-background-strong: #3568ff;
-  --accent-on-background-medium: #789aff;
-  --accent-on-background-weak: #bccdff;
-  --accent-on-solid-strong: #ffffff;
-  --accent-on-solid-medium: rgba(255, 255, 255, 0.9);
-  --accent-on-solid-weak: rgba(255, 255, 255, 0.7);
-  --accent-border-strong: #3568ff;
-  --accent-border-medium: rgba(53, 104, 255, 0.5);
-  --accent-border-weak: rgba(53, 104, 255, 0.2);
-  --accent-alpha-strong: rgba(53, 104, 255, 0.5);
-  --accent-alpha-medium: rgba(53, 104, 255, 0.3);
-  --accent-alpha-weak: rgba(53, 104, 255, 0.1);
+  /* Accent (same pink family — no blue) */
+  --accent-solid-strong: #FD3D65;
+  --accent-solid-medium: #fd7290;
+  --accent-solid-weak: #fea8ba;
+  --accent-background-strong: #FD3D65;
+  --accent-background-medium: rgba(253, 61, 101, 0.2);
+  --accent-background-weak: rgba(253, 61, 101, 0.1);
+  --accent-on-background-strong: #FD3D65;
+  --accent-on-background-medium: #fd7290;
+  --accent-on-background-weak: #fea8ba;
+  --accent-on-solid-strong: #FFE9F3;
+  --accent-on-solid-medium: rgba(255, 233, 243, 0.9);
+  --accent-on-solid-weak: rgba(255, 233, 243, 0.7);
+  --accent-border-strong: #FD3D65;
+  --accent-border-medium: rgba(253, 61, 101, 0.5);
+  --accent-border-weak: rgba(253, 61, 101, 0.2);
+  --accent-alpha-strong: rgba(253, 61, 101, 0.5);
+  --accent-alpha-medium: rgba(253, 61, 101, 0.3);
+  --accent-alpha-weak: rgba(253, 61, 101, 0.1);
 
-  /* Neutral Colors for dark mode */
-  --neutral-solid-strong: #fbf3f0;
-  --neutral-solid-medium: #f6e0da;
-  --neutral-solid-weak: #eaeaea;
-  --neutral-background-strong: #2f2a2a;
-  --neutral-background-medium: #1a1616;
-  --neutral-background-weak: #0f0a0a;
-  --neutral-on-background-strong: #fbf3f0;
-  --neutral-on-background-medium: #c4bfbf;
-  --neutral-on-background-weak: #8d8686;
-  --neutral-on-solid-strong: #1a1616;
-  --neutral-on-solid-medium: #2f2a2a;
-  --neutral-on-solid-weak: #454040;
-  --neutral-border-strong: #5e5858;
-  --neutral-border-medium: #454040;
-  --neutral-border-weak: #2f2a2a;
-  --neutral-alpha-strong: rgba(251, 243, 240, 0.3);
-  --neutral-alpha-medium: rgba(251, 243, 240, 0.15);
-  --neutral-alpha-weak: rgba(251, 243, 240, 0.08);
+  /* Neutral */
+  --neutral-solid-strong: #FFE9F3;
+  --neutral-solid-medium: #ddd5d8;
+  --neutral-solid-weak: #c6bfc1;
+  --neutral-background-strong: #2a2626;
+  --neutral-background-medium: #161313;
+  --neutral-background-weak: #080707;
+  --neutral-on-background-strong: #FFE9F3;
+  --neutral-on-background-medium: #c6bfc1;
+  --neutral-on-background-weak: #7a7474;
+  --neutral-on-solid-strong: #080707;
+  --neutral-on-solid-medium: #161313;
+  --neutral-on-solid-weak: #2a2626;
+  --neutral-border-strong: #3e3939;
+  --neutral-border-medium: #2a2626;
+  --neutral-border-weak: #161313;
+  --neutral-alpha-strong: rgba(255, 233, 243, 0.3);
+  --neutral-alpha-medium: rgba(255, 233, 243, 0.15);
+  --neutral-alpha-weak: rgba(255, 233, 243, 0.08);
 
-  /* Static Colors */
-  --static-white: #ffffff;
-  --static-black: #000000;
+  --static-white: #FFE9F3;
+  --static-black: #080707;
   --static-transparent: transparent;
 
   /* Shadows */
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.3);
-  --shadow-s: 0 2px 4px rgba(0, 0, 0, 0.3);
-  --shadow-m: 0 4px 8px rgba(0, 0, 0, 0.3);
-  --shadow-l: 0 8px 16px rgba(0, 0, 0, 0.3);
-  --shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.3);
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.5);
+  --shadow-s:  0 2px 4px rgba(0, 0, 0, 0.5);
+  --shadow-m:  0 4px 8px rgba(0, 0, 0, 0.5);
+  --shadow-l:  0 8px 16px rgba(0, 0, 0, 0.5);
+  --shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.5);
 
-  /* Brand Glow Effects */
-  --glow-brand: 0 0 30px rgba(253, 82, 95, 0.5), 0 0 60px rgba(253, 82, 95, 0.3);
-  --glow-accent: 0 0 30px rgba(53, 104, 255, 0.5), 0 0 60px rgba(53, 104, 255, 0.3);
-  --shadow-brand-sm: 0 4px 14px rgba(253, 82, 95, 0.25);
-  --shadow-brand-md: 0 8px 30px rgba(253, 82, 95, 0.35);
-  --shadow-brand-lg: 0 20px 50px rgba(253, 82, 95, 0.4);
+  --shadow-brand-sm: 0 4px 14px rgba(255, 7, 61, 0.25);
+  --shadow-brand-md: 0 8px 30px rgba(255, 7, 61, 0.35);
+  --shadow-brand-lg: 0 20px 50px rgba(255, 7, 61, 0.4);
 }
 
 /* ============================================
@@ -171,233 +132,133 @@
    ============================================ */
 [data-theme="light"],
 [data-brand="custom"][data-theme="light"] {
-  /* Page Background */
-  --page-background: #fbf3f0;
-  --surface: rgba(253, 82, 95, 0.04);
-  --surface-strong: rgba(253, 82, 95, 0.08);
+  --page-background: #FFE9F3;
+  --surface: rgba(255, 7, 61, 0.04);
+  --surface-strong: rgba(255, 7, 61, 0.08);
 
-  /* Brand Colors - Hot Fuchsia for light mode */
-  --brand-solid-strong: #fd525f;
-  --brand-solid-medium: #fd1124;
-  --brand-solid-weak: #c80213;
-  --brand-background-strong: #fd525f;
-  --brand-background-medium: rgba(253, 82, 95, 0.15);
-  --brand-background-weak: rgba(253, 82, 95, 0.08);
-  --brand-on-background-strong: #c80213;
-  --brand-on-background-medium: #fd1124;
-  --brand-on-background-weak: #fd525f;
-  --brand-on-solid-strong: #ffffff;
-  --brand-on-solid-medium: rgba(255, 255, 255, 0.95);
-  --brand-on-solid-weak: rgba(255, 255, 255, 0.8);
-  --brand-border-strong: #fd525f;
-  --brand-border-medium: rgba(253, 82, 95, 0.4);
-  --brand-border-weak: rgba(253, 82, 95, 0.15);
-  --brand-alpha-strong: rgba(253, 82, 95, 0.4);
-  --brand-alpha-medium: rgba(253, 82, 95, 0.2);
-  --brand-alpha-weak: rgba(253, 82, 95, 0.08);
+  --brand-solid-strong: #FF073D;
+  --brand-solid-medium: #FD3D65;
+  --brand-solid-weak: #fd7290;
+  --brand-background-strong: #FF073D;
+  --brand-background-medium: rgba(255, 7, 61, 0.15);
+  --brand-background-weak: rgba(255, 7, 61, 0.08);
+  --brand-on-background-strong: #cc0030;
+  --brand-on-background-medium: #FF073D;
+  --brand-on-background-weak: #FD3D65;
+  --brand-on-solid-strong: #FFE9F3;
+  --brand-on-solid-medium: rgba(255, 233, 243, 0.95);
+  --brand-on-solid-weak: rgba(255, 233, 243, 0.8);
+  --brand-border-strong: #FF073D;
+  --brand-border-medium: rgba(255, 7, 61, 0.4);
+  --brand-border-weak: rgba(255, 7, 61, 0.15);
+  --brand-alpha-strong: rgba(255, 7, 61, 0.4);
+  --brand-alpha-medium: rgba(255, 7, 61, 0.2);
+  --brand-alpha-weak: rgba(255, 7, 61, 0.08);
 
-  /* Accent Colors - International Klein Blue for light mode */
-  --accent-solid-strong: #002bad;
-  --accent-solid-medium: #003cf1;
-  --accent-solid-weak: #3568ff;
-  --accent-background-strong: #002bad;
-  --accent-background-medium: rgba(0, 43, 173, 0.15);
-  --accent-background-weak: rgba(0, 43, 173, 0.08);
-  --accent-on-background-strong: #001145;
-  --accent-on-background-medium: #002bad;
-  --accent-on-background-weak: #003cf1;
-  --accent-on-solid-strong: #ffffff;
-  --accent-on-solid-medium: rgba(255, 255, 255, 0.95);
-  --accent-on-solid-weak: rgba(255, 255, 255, 0.8);
-  --accent-border-strong: #002bad;
-  --accent-border-medium: rgba(0, 43, 173, 0.4);
-  --accent-border-weak: rgba(0, 43, 173, 0.15);
-  --accent-alpha-strong: rgba(0, 43, 173, 0.4);
-  --accent-alpha-medium: rgba(0, 43, 173, 0.2);
-  --accent-alpha-weak: rgba(0, 43, 173, 0.08);
+  --accent-solid-strong: #FD3D65;
+  --accent-solid-medium: #FF073D;
+  --accent-solid-weak: #fd7290;
+  --accent-background-strong: #FD3D65;
+  --accent-background-medium: rgba(253, 61, 101, 0.15);
+  --accent-background-weak: rgba(253, 61, 101, 0.08);
+  --accent-on-background-strong: #cc0030;
+  --accent-on-background-medium: #FD3D65;
+  --accent-on-background-weak: #fd7290;
+  --accent-on-solid-strong: #FFE9F3;
+  --accent-on-solid-medium: rgba(255, 233, 243, 0.95);
+  --accent-on-solid-weak: rgba(255, 233, 243, 0.8);
+  --accent-border-strong: #FD3D65;
+  --accent-border-medium: rgba(253, 61, 101, 0.4);
+  --accent-border-weak: rgba(253, 61, 101, 0.15);
+  --accent-alpha-strong: rgba(253, 61, 101, 0.4);
+  --accent-alpha-medium: rgba(253, 61, 101, 0.2);
+  --accent-alpha-weak: rgba(253, 61, 101, 0.08);
 
-  /* Neutral Colors for light mode */
-  --neutral-solid-strong: #1a1616;
-  --neutral-solid-medium: #2f2a2a;
-  --neutral-solid-weak: #454040;
-  --neutral-background-strong: #eaeaea;
-  --neutral-background-medium: #f6e0da;
-  --neutral-background-weak: #fbf3f0;
-  --neutral-on-background-strong: #1a1616;
-  --neutral-on-background-medium: #5e5858;
-  --neutral-on-background-weak: #8d8686;
-  --neutral-on-solid-strong: #fbf3f0;
-  --neutral-on-solid-medium: #f6e0da;
-  --neutral-on-solid-weak: #eaeaea;
-  --neutral-border-strong: #c4bfbf;
-  --neutral-border-medium: #dcd8d8;
-  --neutral-border-weak: #eaeaea;
-  --neutral-alpha-strong: rgba(26, 22, 22, 0.2);
-  --neutral-alpha-medium: rgba(26, 22, 22, 0.1);
-  --neutral-alpha-weak: rgba(26, 22, 22, 0.05);
+  --neutral-solid-strong: #080707;
+  --neutral-solid-medium: #2a2626;
+  --neutral-solid-weak: #3e3939;
+  --neutral-background-strong: #ddd5d8;
+  --neutral-background-medium: #ede8ea;
+  --neutral-background-weak: #FFE9F3;
+  --neutral-on-background-strong: #080707;
+  --neutral-on-background-medium: #3e3939;
+  --neutral-on-background-weak: #7a7474;
+  --neutral-on-solid-strong: #FFE9F3;
+  --neutral-on-solid-medium: #ffe9f3cc;
+  --neutral-on-solid-weak: #ddd5d8;
+  --neutral-border-strong: #c6bfc1;
+  --neutral-border-medium: #ddd5d8;
+  --neutral-border-weak: #ede8ea;
+  --neutral-alpha-strong: rgba(8, 7, 7, 0.2);
+  --neutral-alpha-medium: rgba(8, 7, 7, 0.1);
+  --neutral-alpha-weak: rgba(8, 7, 7, 0.05);
 
-  /* Static Colors */
-  --static-white: #ffffff;
-  --static-black: #000000;
+  --static-white: #FFE9F3;
+  --static-black: #080707;
   --static-transparent: transparent;
 
-  /* Shadows */
-  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.08);
-  --shadow-s: 0 2px 4px rgba(0, 0, 0, 0.08);
-  --shadow-m: 0 4px 8px rgba(0, 0, 0, 0.1);
-  --shadow-l: 0 8px 16px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 16px 32px rgba(0, 0, 0, 0.12);
+  --shadow-xs: 0 1px 2px rgba(8, 7, 7, 0.08);
+  --shadow-s:  0 2px 4px rgba(8, 7, 7, 0.08);
+  --shadow-m:  0 4px 8px rgba(8, 7, 7, 0.1);
+  --shadow-l:  0 8px 16px rgba(8, 7, 7, 0.1);
+  --shadow-xl: 0 16px 32px rgba(8, 7, 7, 0.12);
 
-  /* Brand Glow Effects */
-  --glow-brand: 0 0 20px rgba(253, 82, 95, 0.3), 0 0 40px rgba(253, 82, 95, 0.15);
-  --glow-accent: 0 0 20px rgba(0, 43, 173, 0.3), 0 0 40px rgba(0, 43, 173, 0.15);
-  --shadow-brand-sm: 0 4px 14px rgba(253, 82, 95, 0.12);
-  --shadow-brand-md: 0 8px 30px rgba(253, 82, 95, 0.18);
-  --shadow-brand-lg: 0 20px 50px rgba(253, 82, 95, 0.22);
+  --shadow-brand-sm: 0 4px 14px rgba(255, 7, 61, 0.12);
+  --shadow-brand-md: 0 8px 30px rgba(255, 7, 61, 0.18);
+  --shadow-brand-lg: 0 20px 50px rgba(255, 7, 61, 0.22);
 }
 
 /* ============================================
-   CUSTOM KEYFRAME ANIMATIONS
+   GLOBAL FONT — Poppins everywhere
    ============================================ */
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+html, body, * {
+  font-family: var(--font-body), sans-serif;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
-}
-
-@keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 20px rgba(253, 82, 95, 0.3); }
-  50% { box-shadow: 0 0 40px rgba(253, 82, 95, 0.6); }
-}
-
-@keyframes gradient-shift {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-
-@keyframes border-glow {
-  0%, 100% { border-color: rgba(253, 82, 95, 0.3); }
-  50% { border-color: rgba(253, 82, 95, 0.8); }
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading), sans-serif;
 }
 
 /* ============================================
    UTILITY CLASSES
    ============================================ */
-.gradient-text {
-  background: var(--gradient-brand);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.gradient-text-accent {
-  background: var(--gradient-accent);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.glow-brand {
-  box-shadow: var(--glow-brand);
-}
-
-.glow-accent {
-  box-shadow: var(--glow-accent);
-}
-
-.gradient-border {
-  border: 2px solid transparent;
-  background: linear-gradient(var(--page-background), var(--page-background)) padding-box,
-              var(--gradient-brand) border-box;
-}
-
-.animated-gradient {
-  background: linear-gradient(270deg, #fd525f, #fe7681, #3568ff, #789aff);
-  background-size: 400% 400%;
-  animation: gradient-shift 8s ease infinite;
+.brand-text {
+  color: #FF073D;
 }
 
 /* ============================================
    COMPONENT OVERRIDES
    ============================================ */
-
-/* Button hover glow */
-button:hover,
-[role="button"]:hover {
-  transition: all 0.3s ease;
-}
-
-/* Links */
 a {
   transition: color 0.2s ease;
 }
 
-/* Selection color */
 ::selection {
-  background: rgba(253, 82, 95, 0.3);
+  background: rgba(255, 7, 61, 0.3);
   color: inherit;
 }
 
 ::-moz-selection {
-  background: rgba(253, 82, 95, 0.3);
+  background: rgba(255, 7, 61, 0.3);
   color: inherit;
 }
 
-/* Scrollbar styling for dark mode */
-[data-theme="dark"] ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
+[data-theme="dark"] ::-webkit-scrollbar       { width: 8px; height: 8px; }
+[data-theme="dark"] ::-webkit-scrollbar-track { background: #080707; }
+[data-theme="dark"] ::-webkit-scrollbar-thumb { background: #2a2626; border-radius: 4px; }
+[data-theme="dark"] ::-webkit-scrollbar-thumb:hover { background: #FF073D; }
 
-[data-theme="dark"] ::-webkit-scrollbar-track {
-  background: #1a1616;
-}
+[data-theme="light"] ::-webkit-scrollbar       { width: 8px; height: 8px; }
+[data-theme="light"] ::-webkit-scrollbar-track { background: #FFE9F3; }
+[data-theme="light"] ::-webkit-scrollbar-thumb { background: #c6bfc1; border-radius: 4px; }
+[data-theme="light"] ::-webkit-scrollbar-thumb:hover { background: #FF073D; }
 
-[data-theme="dark"] ::-webkit-scrollbar-thumb {
-  background: #454040;
-  border-radius: 4px;
-}
-
-[data-theme="dark"] ::-webkit-scrollbar-thumb:hover {
-  background: #fd525f;
-}
-
-/* Scrollbar styling for light mode */
-[data-theme="light"] ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
-}
-
-[data-theme="light"] ::-webkit-scrollbar-track {
-  background: #f6e0da;
-}
-
-[data-theme="light"] ::-webkit-scrollbar-thumb {
-  background: #c4bfbf;
-  border-radius: 4px;
-}
-
-[data-theme="light"] ::-webkit-scrollbar-thumb:hover {
-  background: #fd525f;
-}
-
-/* Focus styles */
 :focus-visible {
-  outline: 2px solid var(--brand-solid-strong);
+  outline: 2px solid #FF073D;
   outline-offset: 2px;
 }
 
-/* Card hover effects */
-.card-hover {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: var(--shadow-brand-md);
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
 }
